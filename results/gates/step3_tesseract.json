@@ -1,0 +1,170 @@
+{
+  "gate": "step3_tesseract",
+  "status": "FAIL",
+  "checks": {
+    "unseen_writer_word_box_f1": {
+      "value": 0.8088,
+      "threshold": 0.9,
+      "op": ">=",
+      "passed": false
+    }
+  },
+  "extra": {
+    "stage": "levers 1-2 (no download, no fine-tuning); final method chosen on TRAIN+VAL, test measured once",
+    "final_method": "lever2",
+    "uses_tesseract": true,
+    "iou": 0.5,
+    "metrics": {
+      "settings": {
+        "line_finder": "tracked",
+        "own": {
+          "gap_h": 0.3,
+          "gap_med": 0.75
+        },
+        "tess_baseline": {
+          "lang": "ara",
+          "psm": 13,
+          "input": "gray",
+          "scale": 1.5
+        },
+        "lever1_tess": {
+          "lang": "script/Arabic",
+          "psm": 13,
+          "input": "gray",
+          "scale": 1.5
+        },
+        "lever2_weights": {
+          "a": 3.0,
+          "b": 2.75,
+          "c": 2.788584614909998,
+          "d": 0.0,
+          "e": 0.6666666666666666
+        },
+        "lever2_no_tess_weights": {
+          "a": 2.0,
+          "b": 2.75,
+          "c": 2.7620357455385616,
+          "d": 0.35231208990089824,
+          "e": 0.0
+        },
+        "max_spans": 5,
+        "lexicon_words": 48357
+      },
+      "tuning_word_boxes": {
+        "baseline_own": {
+          "precision": 0.6038,
+          "recall": 0.7328,
+          "f1": 0.6621,
+          "tp": 861,
+          "fp": 565,
+          "fn": 314
+        },
+        "baseline_tess_lines": {
+          "precision": 0.6255,
+          "recall": 0.6979,
+          "f1": 0.6597,
+          "tp": 820,
+          "fp": 491,
+          "fn": 355
+        },
+        "lever1": {
+          "precision": 0.7029,
+          "recall": 0.7872,
+          "f1": 0.7427,
+          "tp": 925,
+          "fp": 391,
+          "fn": 250
+        },
+        "lever2": {
+          "precision": 0.9292,
+          "recall": 0.9268,
+          "f1": 0.928,
+          "tp": 1089,
+          "fp": 83,
+          "fn": 86
+        },
+        "lever2_no_tess": {
+          "precision": 0.9022,
+          "recall": 0.9345,
+          "f1": 0.9181,
+          "tp": 1098,
+          "fp": 119,
+          "fn": 77
+        }
+      },
+      "TEST_UNSEEN_WRITER": {
+        "pages": 7,
+        "words": 144,
+        "word_boxes": {
+          "precision": 0.8594,
+          "recall": 0.7639,
+          "f1": 0.8088,
+          "tp": 110,
+          "fp": 18,
+          "fn": 34
+        },
+        "split": 4,
+        "merged": 16,
+        "recognizer_on_found_boxes": {
+          "found_words": 110,
+          "found_words_cer": 0.0951,
+          "found_words_accuracy": 0.7091,
+          "page_cer": 0.2162,
+          "page_wer": 0.4795
+        },
+        "lexicon_coverage_of_text_words": 0.979
+      },
+      "TESS_TEST": {
+        "pages": 3,
+        "words": 56,
+        "word_boxes": {
+          "precision": 0.7143,
+          "recall": 0.625,
+          "f1": 0.6667,
+          "tp": 35,
+          "fp": 14,
+          "fn": 21
+        },
+        "split": 3,
+        "merged": 9,
+        "recognizer_on_found_boxes": {
+          "found_words": 35,
+          "found_words_cer": 0.1895,
+          "found_words_accuracy": 0.5714,
+          "page_cer": 0.3131,
+          "page_wer": 0.6885
+        }
+      }
+    },
+    "previous_gate": {
+      "status": "FAIL",
+      "checks": {
+        "unseen_writer_word_box_f1": {
+          "value": 0.8281,
+          "threshold": 0.9,
+          "op": ">=",
+          "passed": false
+        }
+      },
+      "timestamp": "2026-11-14T12:13:46+00:00",
+      "git_commit": "3c21947"
+    },
+    "step5_box_finder": {
+      "method": "own gap rule",
+      "line_finder": "tracked",
+      "gap_h": 0.3,
+      "gap_med": 0.75,
+      "unseen_writer_word_box_f1": 0.8621,
+      "tess_test_word_box_f1": 0.7752,
+      "note": "chosen by the user with the test results in hand; Step 6 FINAL_TEST gives the untouched end-to-end number"
+    }
+  },
+  "git_commit": "6e9cdb9",
+  "timestamp": "2026-11-14T12:54:06+00:00",
+  "user_decision": {
+    "accepted": true,
+    "decided_by": "user (2026-11-14)",
+    "reason": "Word-box F1 on the unseen writer 0.809 (final method lever 2, chosen on TRAIN+VAL) < 0.90 after the baseline and levers 1-2; accepted. Step 5 uses our own gap-rule box finder (baseline settings: tracked lines, gap_h 0.3, gap_med 0.75; unseen writer 0.862, TESS_TEST 0.775). Lever 2 stays in the code as an option to re-tune on new writers.",
+    "timestamp": "2026-11-14T13:02:11+00:00"
+  }
+}

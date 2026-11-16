@@ -1,0 +1,32 @@
+# Step 3: Tesseract 5.5.2 as the page's word/line box finder (gate = word-box quality, chosen by the user
+# 2026-11-14). Text CER/WER is reported, not gated.
+
+baseline:
+  # Settings are chosen on the TUNING pages only (best word-box F1), then measured once on the tests.
+  # Run 1 tuned on VAL alone (12 pages, mostly tiny one-line A/H/J images): the choice did not transfer to full
+  # multi-line pages. Runs 2-3 tune on every batch-2 TRAIN + VAL page. The box finders learn nothing from them;
+  # only these few settings are picked. Unseen-writer and TESS_TEST pages are never used for a choice.
+  tuning_splits: [TRAIN, VAL]
+  langs: [snd, urd, ara, script/Arabic]   # installed models (snd is the 2017 integer "fast" model)
+  psms: [4, 6, 11]                        # 4 = one column of text, 6 = one uniform block, 11 = sparse text
+  inputs: [binary, gray]                  # Step 1 black-and-white page, or Step 1 grayscale (same frame)
+  scales: [1.0, 1.5, 2.0, h20, h30, h40]  # fixed factors, or "hN": scale each page/line so letters are ~N px tall
+                                          # (letters here are 12-32 px; Tesseract silently drops text it finds too big)
+  line_psms: [7, 13]                      # Tesseract inside our lines: 7 = one text line, 13 = raw line (no layout checks)
+  # our own text-free finder: line finder x word-gap rule (see tesseract_ft/boxes.py: own_layout)
+  own_finders: [simple, tracked]
+  own_gap_h: [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 1.0, 1.2, 1.5]
+  own_gap_med: [0.0, 0.5, 0.75, 1.0, 1.25, 1.5, 2.0, 3.0]
+  workers: 4                              # parallel Tesseract processes (one thread each)
+
+gate:
+  iou: 0.5
+  min_word_box_f1: 0.90                   # on the 7 unseen-writer pages (TEST_UNSEEN_WRITER)
+
+box_finder:            # what Step 5 uses (user's decision, 2026-11-14)
+  method: own_gap_rule # tesseract_ft/boxes.py: own_layout
+  line_finder: tracked
+  gap_h: 0.3
+  gap_med: 0.75
+  # Option kept in the code, NOT used: lever 2 (tesseract_ft/cuts.py: best_cuts). Its weights were tuned on pages
+  # whose writers the recognizer was trained on and overfit to them; re-tune it on pages from new writers first.

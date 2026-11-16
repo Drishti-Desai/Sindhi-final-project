@@ -1,0 +1,110 @@
+{
+  "gate": "step2_cnn_transformer",
+  "status": "FAIL",
+  "checks": {
+    "composed_test_1_minus_cer": {
+      "value": 0.866,
+      "threshold": 0.9,
+      "op": ">=",
+      "passed": false
+    }
+  },
+  "extra": {
+    "model": "checkpoints/step2_recognizer_ft/best.pt",
+    "sets": {
+      "composed_test": {
+        "n": 2000,
+        "cer": 0.134,
+        "one_minus_cer": 0.866,
+        "cer_no_punct": 0.134,
+        "word_accuracy": 0.506
+      },
+      "printed_test": {
+        "n": 2000,
+        "cer": 0.0226,
+        "one_minus_cer": 0.9774,
+        "cer_no_punct": 0.0224,
+        "word_accuracy": 0.9
+      },
+      "real_test": {
+        "n": 56,
+        "cer": 0.2265,
+        "one_minus_cer": 0.7735,
+        "cer_no_punct": 0.2275,
+        "word_accuracy": 0.4286,
+        "per_writer": {
+          "H": {
+            "n": 9,
+            "cer": 0.0303,
+            "word_accuracy": 0.8889
+          },
+          "J": {
+            "n": 47,
+            "cer": 0.2587,
+            "word_accuracy": 0.3404
+          }
+        }
+      },
+      "real_test_unseen": {
+        "n": 144,
+        "cer": 0.0881,
+        "one_minus_cer": 0.9119,
+        "cer_no_punct": 0.0678,
+        "word_accuracy": 0.7153,
+        "per_writer": {
+          "purple_pen": {
+            "n": 144,
+            "cer": 0.0881,
+            "word_accuracy": 0.7153
+          }
+        }
+      }
+    },
+    "labels": {
+      "real_test": "writers H, J: seen in training",
+      "real_test_unseen": "unseen writer (purple pen)"
+    },
+    "letter_cnn": {
+      "test_accuracy": 0.8225,
+      "threshold": 0.9,
+      "status": "FAIL",
+      "user_decision": {
+        "accepted": true,
+        "decided_by": "user (Step 2 option A, 2026-10-18)",
+        "reason": "Letter CNN plateaued at 0.8225 (< 0.90) after 6 runs + ensembling; kept as backbone. Step 2 is gated on word-level 1-CER instead.",
+        "timestamp": "2026-10-18T10:12:54+00:00"
+      }
+    },
+    "previous_gate": {
+      "status": "FAIL",
+      "checks": {
+        "composed_test_1_minus_cer": {
+          "value": 0.8618,
+          "threshold": 0.9,
+          "op": ">=",
+          "passed": false
+        }
+      },
+      "timestamp": "2026-10-20T15:46:03+00:00",
+      "git_commit": "f9f85a7"
+    },
+    "note": "Gated on word level per the user's option A. real_test / real_test_unseen are reported, not gated.",
+    "reference_real_handwriting": {
+      "test_set": "real_test_unseen: purple-pen writer, 144 word crops from 7 pages, never trained or tuned on",
+      "one_minus_cer": 0.9119,
+      "cer": 0.0881,
+      "cer_no_punct": 0.0678,
+      "word_accuracy": 0.7153,
+      "caveat": "given correct word boundaries (chosen with the old model's help); one neat writer",
+      "use": "later steps report their real-handwriting result against this number"
+    }
+  },
+  "git_commit": "55d01ef",
+  "timestamp": "2026-11-14T11:11:14+00:00",
+  "user_decision": {
+    "accepted": true,
+    "decided_by": "user (2026-11-14, option 1)",
+    "reason": "Composed-word test 1-CER 0.866 < 0.90 after fine-tuning on batch-2 real handwriting; accepted. Use the fine-tuned recognizer checkpoints/step2_recognizer_ft/best.pt. The unseen-writer result is the main reference number for real handwriting.",
+    "timestamp": "2026-11-14T11:21:07+00:00"
+  }
+}

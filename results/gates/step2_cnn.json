@@ -1,0 +1,59 @@
+{
+  "gate": "step2_cnn",
+  "status": "FAIL",
+  "checks": {
+    "letter_test_accuracy": {
+      "value": 0.8225,
+      "threshold": 0.9,
+      "op": ">=",
+      "passed": false
+    }
+  },
+  "extra": {
+    "chosen_on_validation": {
+      "runs": [
+        "gray_aux_synth"
+      ],
+      "tta": true,
+      "val_accuracy": 0.8256,
+      "test_accuracy": 0.8225
+    },
+    "single_model_no_tta_test_accuracy": 0.8144,
+    "checkpoint": "checkpoints/step2_cnn/best.pt (run gray_aux_synth, grayscale input, TTA at inference)",
+    "runs_tried": {
+      "baseline": {
+        "val_accuracy": 0.7575,
+        "test_accuracy": 0.7205
+      },
+      "aux": {
+        "val_accuracy": 0.7684,
+        "test_accuracy": 0.7514
+      },
+      "aux_synth": {
+        "val_accuracy": 0.782,
+        "test_accuracy": 0.7354
+      },
+      "lc25": {
+        "val_accuracy": 0.7302,
+        "test_accuracy": 0.709
+      },
+      "lc50": {
+        "val_accuracy": 0.7493,
+        "test_accuracy": 0.7285
+      },
+      "gray_aux_synth": {
+        "val_accuracy": 0.8147,
+        "test_accuracy": 0.8144
+      }
+    },
+    "test_definition": "top-1 accuracy, 52 classes, 873 crops from 23 sheets never seen in training"
+  },
+  "git_commit": "a2214f8",
+  "timestamp": "2026-10-18T10:04:56+00:00",
+  "user_decision": {
+    "accepted": true,
+    "decided_by": "user (Step 2 option A, 2026-10-18)",
+    "reason": "Letter CNN plateaued at 0.8225 (< 0.90) after 6 runs + ensembling; kept as backbone. Step 2 is gated on word-level 1-CER instead.",
+    "timestamp": "2026-10-18T10:12:54+00:00"
+  }
+}

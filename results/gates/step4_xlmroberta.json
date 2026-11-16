@@ -1,0 +1,170 @@
+{
+  "gate": "step4_xlmroberta",
+  "status": "FAIL",
+  "checks": {
+    "domain_test_word_accuracy": {
+      "value": 0.8896,
+      "threshold": 0.9,
+      "op": ">=",
+      "passed": false
+    },
+    "domain_test_false_correction_rate": {
+      "value": 0.0207,
+      "threshold": 0.02,
+      "op": "<=",
+      "passed": false
+    }
+  },
+  "extra": {
+    "final_variant": "xlmr_sindhi_det",
+    "chosen_on": "synthetic domain val (val_comparison.json)",
+    "main_result_real_handwriting": {
+      "unseen_crops": {
+        "word_accuracy_before": 0.7153,
+        "word_accuracy": 0.7917,
+        "cer_before": 0.0707,
+        "cer": 0.0505,
+        "clean_tokens": 103,
+        "clean_changed": 3,
+        "false_correction_rate": 0.0291
+      },
+      "unseen_pages": {
+        "word_accuracy_before": 0.4236,
+        "word_accuracy": 0.5139,
+        "cer_before": 0.2078,
+        "cer": 0.1934,
+        "clean_tokens": 74,
+        "clean_changed": 1,
+        "false_correction_rate": 0.0135
+      },
+      "hj_crops": {
+        "word_accuracy_before": 0.4286,
+        "word_accuracy": 0.6071,
+        "cer_before": 0.1847,
+        "cer": 0.1777,
+        "clean_tokens": 24,
+        "clean_changed": 1,
+        "false_correction_rate": 0.0417
+      },
+      "hj_crops_H": {
+        "word_accuracy_before": 0.8889,
+        "word_accuracy": 0.8889,
+        "cer_before": 0.0244,
+        "cer": 0.0732,
+        "clean_tokens": 8,
+        "clean_changed": 0,
+        "false_correction_rate": 0.0
+      },
+      "hj_crops_J": {
+        "word_accuracy_before": 0.3404,
+        "word_accuracy": 0.5532,
+        "cer_before": 0.2114,
+        "cer": 0.1951,
+        "clean_tokens": 16,
+        "clean_changed": 1,
+        "false_correction_rate": 0.0625
+      },
+      "hj_pages": {
+        "word_accuracy_before": 0.0714,
+        "word_accuracy": 0.1964,
+        "cer_before": 0.3206,
+        "cer": 0.3206,
+        "clean_tokens": 21,
+        "clean_changed": 0,
+        "false_correction_rate": 0.0
+      }
+    },
+    "reference_only_xlmr_base": {
+      "domain_test": {
+        "word_accuracy_before": 0.7751,
+        "word_accuracy": 0.8735,
+        "cer_before": 0.0517,
+        "cer": 0.0358,
+        "clean_tokens": 1935,
+        "clean_changed": 31,
+        "false_correction_rate": 0.016
+      },
+      "wiki_test": {
+        "word_accuracy_before": 0.7724,
+        "word_accuracy": 0.8506,
+        "cer_before": 0.0497,
+        "cer": 0.0407,
+        "clean_tokens": 13632,
+        "clean_changed": 407,
+        "false_correction_rate": 0.0299
+      },
+      "unseen_crops": {
+        "word_accuracy_before": 0.7153,
+        "word_accuracy": 0.7847,
+        "cer_before": 0.0707,
+        "cer": 0.0577,
+        "clean_tokens": 103,
+        "clean_changed": 1,
+        "false_correction_rate": 0.0097
+      },
+      "hj_crops": {
+        "word_accuracy_before": 0.4286,
+        "word_accuracy": 0.5536,
+        "cer_before": 0.1847,
+        "cer": 0.1847,
+        "clean_tokens": 24,
+        "clean_changed": 1,
+        "false_correction_rate": 0.0417
+      },
+      "unseen_pages": {
+        "word_accuracy_before": 0.4236,
+        "word_accuracy": 0.4653,
+        "cer_before": 0.2078,
+        "cer": 0.2078,
+        "clean_tokens": 74,
+        "clean_changed": 1,
+        "false_correction_rate": 0.0135
+      },
+      "hj_pages": {
+        "word_accuracy_before": 0.0714,
+        "word_accuracy": 0.1607,
+        "cer_before": 0.3206,
+        "cer": 0.3171,
+        "clean_tokens": 21,
+        "clean_changed": 0,
+        "false_correction_rate": 0.0
+      },
+      "hj_crops_H": {
+        "word_accuracy_before": 0.8889,
+        "word_accuracy": 0.8889,
+        "cer_before": 0.0244,
+        "cer": 0.0732,
+        "clean_tokens": 8,
+        "clean_changed": 0,
+        "false_correction_rate": 0.0
+      },
+      "hj_crops_J": {
+        "word_accuracy_before": 0.3404,
+        "word_accuracy": 0.4894,
+        "cer_before": 0.2114,
+        "cer": 0.2033,
+        "clean_tokens": 16,
+        "clean_changed": 1,
+        "false_correction_rate": 0.0625
+      }
+    },
+    "wiki_test": {
+      "word_accuracy_before": 0.7724,
+      "word_accuracy": 0.8583,
+      "cer_before": 0.0497,
+      "cer": 0.0419,
+      "clean_tokens": 13632,
+      "clean_changed": 586,
+      "false_correction_rate": 0.043
+    },
+    "known_limitation": "weights tuned on legal + POS text change too many correct words on Wikipedia (validation 4.1% > 2%); a stricter 1% setting is a future option"
+  },
+  "git_commit": "aeb15b9",
+  "timestamp": "2026-11-14T17:05:06+00:00",
+  "user_decision": {
+    "accepted": true,
+    "decided_by": "user (2026-11-14)",
+    "reason": "Domain test word accuracy 0.890 < 0.90 and 2.07% of correct words changed > 2% (final variant chosen on validation: Sindhi-trained XLM-R + detector); accepted. The pipeline uses this final variant. Real handwriting: unseen writer 71.5% -> 79.2% words correct (3 of 103 correct words changed). Known limitation: 4.3% of correct words changed on Wikipedia (non-legal text); a stricter 1% setting is a future option.",
+    "timestamp": "2026-11-14T17:32:56+00:00"
+  }
+}

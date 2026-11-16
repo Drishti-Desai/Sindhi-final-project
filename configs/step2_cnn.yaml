@@ -1,0 +1,94 @@
+# Step 2: 52-letter CNN + word recognizer (CNN encoder + Transformer decoder).
+# `--small` merges the `small:` block over this file for a quick end-to-end test.
+
+seed: 42
+device: auto                 # auto -> cuda, then mps (Apple GPU), then cpu
+
+letters:
+  image_size: 64
+  batch_size: 64
+  epochs: 150
+  lr: 0.002
+  weight_decay: 0.0005
+  label_smoothing: 0.1
+  patience: 30               # early stopping on validation accuracy
+  dropout: 0.3
+  widths: [32, 64, 128, 256] # channels of the four ResNet stages
+  augment:
+    rotate_deg: 12
+    shear_deg: 10
+    scale: [0.80, 1.10]
+    translate: 0.08
+    stroke_p: 0.4            # thicken or thin strokes (pen width)
+    elastic_p: 0.3           # small local warps (handwriting wobble)
+  aux_weight: 0.3            # auxiliary heads: body shape, dot position, dot count (0 = off)
+  synthetic_p: 0.25          # share of samples replaced by font-rendered letters (0 = off)
+  synthetic_fonts:           # NOT Tahoma: it is the held-out font of the recognizer's printed test
+    - /System/Library/Fonts/GeezaPro.ttc
+    - /System/Library/Fonts/Supplemental/Damascus.ttc
+    - /System/Library/Fonts/Supplemental/Arial.ttf
+    - /System/Library/Fonts/Supplemental/Arial Bold.ttf
+    - /System/Library/Fonts/Supplemental/Times New Roman.ttf
+    - /System/Library/Fonts/Supplemental/Microsoft Sans Serif.ttf
+    - /System/Library/Fonts/SFArabic.ttf
+
+recognizer:
+  height: 64
+  max_width: 320             # 512 made worst-case batches need several GB on the GPU -> heavy swapping
+  max_label_len: 24
+  d_model: 256
+  enc_layers: 2              # Transformer encoder layers over the CNN feature sequence
+  dec_layers: 3
+  heads: 4
+  ff: 1024
+  dropout: 0.1
+  batch_size: 32             # effective batch per optimizer step (48 ran this 8 GB Mac out of memory)
+  grad_accum: 2              # ...made of 2 micro-batches of 16: same training, half the activation memory
+  num_workers: 2             # data-loading processes; each holds its own copy of torch + letter crops
+  mps_memory_ratio: 0.6      # cap PyTorch's Apple-GPU memory: fail fast with an error instead of swapping
+  log_every: 100             # progress line every N training steps
+  gradient_checkpointing: true  # recompute trunk activations in backward: much less GPU memory, ~30% slower
+  epochs: 15                 # sized for this Mac: ~0.5 s/step on MPS -> ~75 min of training
+  lr: 0.0005
+  warmup_steps: 750
+  label_smoothing: 0.1
+  patience: 5
+  steps_per_epoch: 900       # 900 x 32 = 28,800 samples per epoch (same as 600 x 48)
+  val_size: 600
+  mix:                       # share of each training source per batch
+    printed: 0.45            # printed-font renders of corpus words (text2image)
+    composed: 0.35           # words assembled from real handwritten letter crops
+    real: 0.20               # real word crops cut from TESS_TRAIN pages
+  backbone_lr_mult: 0.3      # pretrained letter-CNN layers learn more slowly at first
+
+finetune:                    # --finetune: continue from the trained recognizer with real batch-2 crops
+  init: checkpoints/step2_recognizer/best.pt
+  lr: 0.0001
+  warmup_steps: 200
+  epochs: 8
+  patience: 3
+  mix:
+    printed: 0.30
+    composed: 0.30
+    real: 0.40               # 1,104 batch-2 TRAIN crops + 97 older real words
+
+synthetic:
+  words_train: 20000         # distinct corpus words for training renders
+  words_val: 1000
+  words_test: 2000           # held-out words (never seen in training)
+  renders_per_word: 2
+  fonts_train: ["Arial", "Arial Bold", "Damascus", "Damascus Bold", "Geeza Pro", "Geeza Pro Bold",
+                "Times New Roman", "Microsoft Sans Serif"]   # Courier New dropped: draws ڪ like ک
+  fonts_test: ["Tahoma", "Tahoma Bold"]   # held-out fonts for the printed test set
+  ptsize: [18, 28]
+  min_word_len: 2
+  max_word_len: 12
+
+gate:
+  min_letter_accuracy: 0.90        # step2_cnn: top-1 on the sheet-disjoint test split (FAIL 0.8225, accepted by user)
+  min_sequence_1_minus_cer: 0.90   # step2_cnn_transformer: composed test words (held-out words + test sheets)
+
+small:
+  letters: {epochs: 3, patience: 3}
+  recognizer: {epochs: 2, steps_per_epoch: 30, val_size: 64, batch_size: 16}
+  synthetic: {words_train: 300, words_val: 50, words_test: 100, renders_per_word: 1}

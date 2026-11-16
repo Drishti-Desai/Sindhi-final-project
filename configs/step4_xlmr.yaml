@@ -1,0 +1,33 @@
+# Step 4: XLM-RoBERTa spelling correction (see docs/STEP4_xlmroberta.md)
+model: checkpoints/xlmr_base          # xlm-roberta-base, copied from the local Hugging Face cache (SHA-256 checked)
+mps_memory_ratio: 0.7                 # Step 2 used 0.6; the 250k-word output layer needs a 736 MB transient here
+
+mlm:                                  # further masked-LM training on Sindhi text (train split only)
+  out: checkpoints/step4_xlmr_mlm
+  max_len: 128
+  domain_oversample: 20               # legal + POS train sentences repeated this often (Wikipedia once)
+  whole_word_mask: 0.15
+  batch_size: 4
+  grad_accum: 8
+  lr: 5.0e-5
+  warmup_steps: 130                   # 10% of the steps
+  max_steps: 1300                     # ~1.5 h at 4.2 s per step (32 chunks)
+  save_steps: 250
+  eval_steps: 250
+  freeze_embeddings: true             # 192M-parameter embedding matrix (tied to the output layer) stays fixed
+  freeze_layers: 6                    # lower 6 of 12 layers fixed too: the 3.2 GB cap does not fit training all 12
+
+detector:                             # token classification: "is this word wrong?"
+  out: checkpoints/step4_xlmr_detector
+  init: checkpoints/step4_xlmr_mlm/best
+  train_sentences: 30000              # corrupted with the error model, 20% of words
+  batch_size: 8                       # 8 x 4 = 32 per update (16 x 2 ran out of MPS memory)
+  grad_accum: 4
+  lr: 3.0e-5
+  epochs: 1
+  freeze_layers: 6                    # as for the masked-LM run; embeddings frozen and held in bfloat16
+
+gate:
+  corruption_rate: 0.20
+  min_word_accuracy: 0.90             # after correction, held-out legal + POS sentences
+  max_false_correction_rate: 0.02     # share of clean words that get changed

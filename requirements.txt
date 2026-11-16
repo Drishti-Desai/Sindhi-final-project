@@ -1,0 +1,33 @@
+# Exact versions in the working .venv (Python 3.13.3, Apple M2), pinned 2026-11-13.
+# Recreate with:  python3 -m venv .venv && .venv/bin/python -m pip install -r requirements.txt
+
+# Step 1: preprocessing
+numpy==2.5.4
+opencv-python-headless==5.0.0.93
+scikit-image==0.26.0
+Pillow==12.3.0
+PyYAML==6.0.3
+rembg==2.0.85          # only for the method comparison (option b); not used by the pipeline
+onnxruntime==1.31.0    # rembg backend
+pyarrow==26.0.0        # reads the Wikipedia parquet
+
+# Step 2: letter CNN + word recognizer
+torch==2.14.1
+torchvision==0.29.1
+
+# tests
+pytest==9.1.1
+
+# Step 4: XLM-RoBERTa (model copied from the local Hugging Face cache, see docs/STEP4_xlmroberta.md)
+transformers==5.23.0
+accelerate==1.15.0     # needed by the transformers Trainer
+tokenizers==0.23.3
+safetensors==0.8.0
+huggingface_hub==2.4.0
+
+# Step 6 frontend (app.py; local only)
+gradio==6.32.0
+gradio_client==2.7.2
+fastapi==0.163.0
+uvicorn==0.54.0
+pandas==3.1.1

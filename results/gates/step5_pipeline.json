@@ -1,0 +1,70 @@
+{
+  "gate": "step5_pipeline",
+  "status": "FAIL",
+  "checks": {
+    "unseen_writer_pages_one_minus_cer": {
+      "value": 0.7778,
+      "threshold": 0.9,
+      "op": ">=",
+      "passed": false
+    }
+  },
+  "extra": {
+    "test_set": "TEST_UNSEEN_WRITER pages, verified part (144 words)",
+    "predicted_before_run": "CER 0.12-0.15 (1 - CER 0.85-0.88), likely FAIL (docs/STEP5_pipeline.md, recorded before the run)",
+    "metrics": {
+      "unseen_writer_pages": {
+        "word_accuracy_before": 0.3472,
+        "word_accuracy": 0.4861,
+        "cer_before": 0.2367,
+        "cer": 0.2222,
+        "clean_tokens": 50,
+        "clean_changed": 0,
+        "false_correction_rate": 0.0,
+        "one_minus_cer": 0.7778,
+        "pages": 7,
+        "words": 144
+      },
+      "hj_pages": {
+        "word_accuracy_before": 0.2321,
+        "word_accuracy": 0.375,
+        "cer_before": 0.3136,
+        "cer": 0.3031,
+        "clean_tokens": 14,
+        "clean_changed": 0,
+        "false_correction_rate": 0.0,
+        "one_minus_cer": 0.6969,
+        "pages": 3,
+        "words": 56
+      }
+    },
+    "step4_gap_rule_pages": {
+      "unseen_writer_pages": {
+        "word_accuracy_before": 0.4236,
+        "word_accuracy": 0.5139,
+        "cer_before": 0.2078,
+        "cer": 0.1934,
+        "clean_tokens": 74,
+        "clean_changed": 1,
+        "false_correction_rate": 0.0135
+      },
+      "hj_pages": {
+        "word_accuracy_before": 0.0714,
+        "word_accuracy": 0.1964,
+        "cer_before": 0.3206,
+        "cer": 0.3206,
+        "clean_tokens": 21,
+        "clean_changed": 0,
+        "false_correction_rate": 0.0
+      }
+    }
+  },
+  "git_commit": "7c14da1",
+  "timestamp": "2026-11-14T17:45:42+00:00",
+  "user_decision": {
+    "accepted": true,
+    "decided_by": "user (2026-11-14, option 3)",
+    "reason": "Unseen writer's pages through run_pipeline.py 1-CER 0.778 < 0.90 (worse than the Step 4 gap-rule reading, 0.807; VAL pages CER 0.462 -> 0.246); accepted. Joins stay the default (as chosen on VAL); run_pipeline.py gets a --words joins|gaps switch for writers with clear spacing. Step 6 is measured with the default (joins) only.",
+    "timestamp": "2026-11-14T17:48:51+00:00"
+  }
+}

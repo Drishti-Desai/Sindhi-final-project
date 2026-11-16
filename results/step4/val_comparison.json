@@ -1,0 +1,402 @@
+{
+  "selection": "weights per variant chosen on the synthetic domain val set: max word accuracy with false corrections <= 0.02",
+  "final_variant": "xlmr_sindhi_det",
+  "rules_kept_after_validation": false,
+  "rules_check_on_training_text": {
+    "R1 ۾ only as a whole word": {
+      "violations": 1020,
+      "rate": 0.000255,
+      "kept": true,
+      "examples": [
+        "۾“",
+        "وچ۾",
+        "۾؛",
+        "۾‘"
+      ]
+    },
+    "R2 ۽ only as a whole word": {
+      "violations": 808,
+      "rate": 0.000202,
+      "kept": true,
+      "examples": [
+        "(۽",
+        "ا۽",
+        "آهي۽",
+        "لا۽"
+      ]
+    },
+    "R3 no word starts with ڻ": {
+      "violations": 41,
+      "rate": 1e-05,
+      "kept": true,
+      "examples": [
+        "ڻ",
+        "ڻه",
+        "ڻڻو",
+        "ڻيو"
+      ]
+    },
+    "R4 no word starts with ڙ": {
+      "violations": 39,
+      "rate": 1e-05,
+      "kept": true,
+      "examples": [
+        "ڙي",
+        "ڙ",
+        "ڙه",
+        "ڙي“"
+      ]
+    },
+    "R5 no word starts with ڱ": {
+      "violations": 10,
+      "rate": 3e-06,
+      "kept": true,
+      "examples": [
+        "ڱي",
+        "ڱ",
+        "ڱنڍڻا",
+        "ڱکڻڻ"
+      ]
+    },
+    "R6 no longer word starts with ء": {
+      "violations": 6,
+      "rate": 2e-06,
+      "kept": true,
+      "examples": [
+        "ء۽",
+        "ءجي",
+        "ء“",
+        "ءي"
+      ]
+    },
+    "R7 no letter three times in a row": {
+      "violations": 68,
+      "rate": 1.7e-05,
+      "kept": true,
+      "examples": [
+        "ڪوسووو",
+        "نننايا",
+        "خطرو۔۔۔۔۔’’خالصتان‘‘",
+        "”هيييني"
+      ]
+    },
+    "R9 no punctuation between letters": {
+      "violations": 8185,
+      "rate": 0.002049,
+      "kept": false,
+      "examples": [
+        "ق.م",
+        "آهي.هن",
+        "آهن.هن",
+        "آهي.ان"
+      ]
+    },
+    "R10 one-letter words only from the training list": {
+      "violations": 282,
+      "rate": 7.1e-05,
+      "kept": true,
+      "examples": [
+        "ز",
+        "ڀ",
+        "ل",
+        "٬"
+      ]
+    }
+  },
+  "weights": {
+    "none": {},
+    "lexicon": {
+      "gamma": 0.0,
+      "tau_known": 99.0,
+      "theta": 1.0,
+      "alpha": 1.9735898551215834,
+      "beta": 0.4186083007903795,
+      "eta": 3.871607080709216,
+      "tau_oov": 1.0273884798515556
+    },
+    "xlmr_base": {
+      "gamma": 0.26231033836941986,
+      "tau_known": 2.978754952969621,
+      "theta": 1.0,
+      "alpha": 2.4,
+      "beta": 0.45970946445359206,
+      "eta": 1.0774757090635023,
+      "tau_oov": 1.471223056686065
+    },
+    "xlmr_sindhi": {
+      "gamma": 0.21897465140163042,
+      "tau_known": 1.5,
+      "theta": 1.0,
+      "alpha": 2.4,
+      "beta": 0.4,
+      "eta": 0.01808122392470468,
+      "tau_oov": 0.0
+    },
+    "xlmr_sindhi_det": {
+      "gamma": 0.3198551837368626,
+      "tau_known": 1.5,
+      "theta": 0.8405416345986345,
+      "alpha": 3.0,
+      "beta": 0.24028456335798487,
+      "eta": 0.0,
+      "tau_oov": -2.528730217005257
+    },
+    "xlmr_sindhi_det+rules": {
+      "gamma": 0.338072693079261,
+      "tau_known": 1.5,
+      "theta": 0.8,
+      "alpha": 3.0,
+      "beta": 0.2,
+      "eta": 1.0,
+      "tau_oov": -1.8
+    }
+  },
+  "validation": {
+    "none": {
+      "domain": {
+        "word_accuracy_before": 0.777,
+        "word_accuracy": 0.777,
+        "cer_before": 0.0499,
+        "cer": 0.0499,
+        "clean_tokens": 2472,
+        "clean_changed": 0,
+        "false_correction_rate": 0.0
+      },
+      "wiki": {
+        "word_accuracy_before": 0.7757,
+        "word_accuracy": 0.7757,
+        "cer_before": 0.0494,
+        "cer": 0.0494,
+        "clean_tokens": 13198,
+        "clean_changed": 0,
+        "false_correction_rate": 0.0
+      },
+      "real_crops": {
+        "word_accuracy_before": 0.5493,
+        "word_accuracy": 0.5493,
+        "cer_before": 0.1243,
+        "cer": 0.1243,
+        "clean_tokens": 39,
+        "clean_changed": 0,
+        "false_correction_rate": 0.0
+      },
+      "real_pages": {
+        "word_accuracy_before": -0.2535,
+        "word_accuracy": -0.2535,
+        "cer_before": 0.4405,
+        "cer": 0.4405,
+        "clean_tokens": 17,
+        "clean_changed": 0,
+        "false_correction_rate": 0.0
+      }
+    },
+    "lexicon": {
+      "domain": {
+        "word_accuracy_before": 0.777,
+        "word_accuracy": 0.8521,
+        "cer_before": 0.0499,
+        "cer": 0.0376,
+        "clean_tokens": 2472,
+        "clean_changed": 33,
+        "false_correction_rate": 0.0133
+      },
+      "wiki": {
+        "word_accuracy_before": 0.7757,
+        "word_accuracy": 0.824,
+        "cer_before": 0.0494,
+        "cer": 0.0426,
+        "clean_tokens": 13198,
+        "clean_changed": 445,
+        "false_correction_rate": 0.0337
+      },
+      "real_crops": {
+        "word_accuracy_before": 0.5493,
+        "word_accuracy": 0.6056,
+        "cer_before": 0.1243,
+        "cer": 0.1135,
+        "clean_tokens": 39,
+        "clean_changed": 0,
+        "false_correction_rate": 0.0
+      },
+      "real_pages": {
+        "word_accuracy_before": -0.2535,
+        "word_accuracy": -0.2113,
+        "cer_before": 0.4405,
+        "cer": 0.4405,
+        "clean_tokens": 17,
+        "clean_changed": 0,
+        "false_correction_rate": 0.0
+      }
+    },
+    "xlmr_base": {
+      "domain": {
+        "word_accuracy_before": 0.777,
+        "word_accuracy": 0.8838,
+        "cer_before": 0.0499,
+        "cer": 0.034,
+        "clean_tokens": 2472,
+        "clean_changed": 28,
+        "false_correction_rate": 0.0113
+      },
+      "wiki": {
+        "word_accuracy_before": 0.7757,
+        "word_accuracy": 0.8559,
+        "cer_before": 0.0494,
+        "cer": 0.0393,
+        "clean_tokens": 13198,
+        "clean_changed": 373,
+        "false_correction_rate": 0.0283
+      },
+      "real_crops": {
+        "word_accuracy_before": 0.5493,
+        "word_accuracy": 0.7183,
+        "cer_before": 0.1243,
+        "cer": 0.0838,
+        "clean_tokens": 39,
+        "clean_changed": 0,
+        "false_correction_rate": 0.0
+      },
+      "real_pages": {
+        "word_accuracy_before": -0.2535,
+        "word_accuracy": -0.1549,
+        "cer_before": 0.4405,
+        "cer": 0.4568,
+        "clean_tokens": 17,
+        "clean_changed": 0,
+        "false_correction_rate": 0.0
+      }
+    },
+    "xlmr_sindhi": {
+      "domain": {
+        "word_accuracy_before": 0.777,
+        "word_accuracy": 0.8926,
+        "cer_before": 0.0499,
+        "cer": 0.0322,
+        "clean_tokens": 2472,
+        "clean_changed": 35,
+        "false_correction_rate": 0.0142
+      },
+      "wiki": {
+        "word_accuracy_before": 0.7757,
+        "word_accuracy": 0.8645,
+        "cer_before": 0.0494,
+        "cer": 0.0378,
+        "clean_tokens": 13198,
+        "clean_changed": 400,
+        "false_correction_rate": 0.0303
+      },
+      "real_crops": {
+        "word_accuracy_before": 0.5493,
+        "word_accuracy": 0.7042,
+        "cer_before": 0.1243,
+        "cer": 0.0865,
+        "clean_tokens": 39,
+        "clean_changed": 0,
+        "false_correction_rate": 0.0
+      },
+      "real_pages": {
+        "word_accuracy_before": -0.2535,
+        "word_accuracy": -0.1549,
+        "cer_before": 0.4405,
+        "cer": 0.4541,
+        "clean_tokens": 17,
+        "clean_changed": 0,
+        "false_correction_rate": 0.0
+      }
+    },
+    "xlmr_sindhi_det": {
+      "domain": {
+        "word_accuracy_before": 0.777,
+        "word_accuracy": 0.9029,
+        "cer_before": 0.0499,
+        "cer": 0.0313,
+        "clean_tokens": 2472,
+        "clean_changed": 46,
+        "false_correction_rate": 0.0186
+      },
+      "wiki": {
+        "word_accuracy_before": 0.7757,
+        "word_accuracy": 0.8642,
+        "cer_before": 0.0494,
+        "cer": 0.0398,
+        "clean_tokens": 13198,
+        "clean_changed": 541,
+        "false_correction_rate": 0.041
+      },
+      "real_crops": {
+        "word_accuracy_before": 0.5493,
+        "word_accuracy": 0.7183,
+        "cer_before": 0.1243,
+        "cer": 0.0838,
+        "clean_tokens": 39,
+        "clean_changed": 0,
+        "false_correction_rate": 0.0
+      },
+      "real_pages": {
+        "word_accuracy_before": -0.2535,
+        "word_accuracy": -0.1408,
+        "cer_before": 0.4405,
+        "cer": 0.4622,
+        "clean_tokens": 17,
+        "clean_changed": 0,
+        "false_correction_rate": 0.0
+      }
+    },
+    "xlmr_sindhi_det+rules": {
+      "domain": {
+        "word_accuracy_before": 0.777,
+        "word_accuracy": 0.9029,
+        "cer_before": 0.0499,
+        "cer": 0.0314,
+        "clean_tokens": 2472,
+        "clean_changed": 46,
+        "false_correction_rate": 0.0186
+      },
+      "wiki": {
+        "word_accuracy_before": 0.7757,
+        "word_accuracy": 0.8638,
+        "cer_before": 0.0494,
+        "cer": 0.0399,
+        "clean_tokens": 13198,
+        "clean_changed": 561,
+        "false_correction_rate": 0.0425
+      },
+      "real_crops": {
+        "word_accuracy_before": 0.5493,
+        "word_accuracy": 0.7183,
+        "cer_before": 0.1243,
+        "cer": 0.0892,
+        "clean_tokens": 39,
+        "clean_changed": 0,
+        "false_correction_rate": 0.0
+      },
+      "real_pages": {
+        "word_accuracy_before": -0.2535,
+        "word_accuracy": -0.1549,
+        "cer_before": 0.4405,
+        "cer": 0.4595,
+        "clean_tokens": 17,
+        "clean_changed": 0,
+        "false_correction_rate": 0.0
+      }
+    }
+  },
+  "set_sizes": {
+    "domain": {
+      "items": 267,
+      "words": 3090
+    },
+    "wiki": {
+      "items": 1001,
+      "words": 16497
+    },
+    "real_crops": {
+      "items": 8,
+      "words": 71
+    },
+    "real_pages": {
+      "items": 8,
+      "words": 71
+    }
+  }
+}

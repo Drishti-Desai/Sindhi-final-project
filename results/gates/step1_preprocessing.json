@@ -1,0 +1,116 @@
+{
+  "gate": "step1_preprocessing",
+  "status": "PASS",
+  "checks": {
+    "page_mean_f1": {
+      "value": 0.9559,
+      "threshold": 0.9,
+      "op": ">=",
+      "passed": true
+    },
+    "page_dot_recall": {
+      "value": 0.9931,
+      "threshold": 0.9,
+      "op": ">=",
+      "passed": true
+    },
+    "glyph_f1_vs_oracle": {
+      "value": 0.982,
+      "threshold": 0.95,
+      "op": ">=",
+      "passed": true
+    },
+    "glyph_dot_recall": {
+      "value": 0.9444,
+      "threshold": 0.9,
+      "op": ">=",
+      "passed": true
+    },
+    "deskew_mean_abs_error_deg": {
+      "value": 0.029,
+      "threshold": 1.0,
+      "op": "<=",
+      "passed": true
+    },
+    "configured_methods_match_benchmark_choice": {
+      "value": 1,
+      "threshold": 1,
+      "op": "==",
+      "passed": true
+    },
+    "images_failed": {
+      "value": 0,
+      "threshold": 0,
+      "op": "==",
+      "passed": true
+    },
+    "images_missing": {
+      "value": 0,
+      "threshold": 0,
+      "op": "==",
+      "passed": true
+    },
+    "unit_tests_pass": {
+      "value": 1,
+      "threshold": 1,
+      "op": "==",
+      "passed": true
+    }
+  },
+  "extra": {
+    "page_method": "flatten_sauvola",
+    "glyph_method": "flatten_normalized_fixed",
+    "glyph_f1_absolute": 0.7385,
+    "glyph_oracle_f1": 0.752,
+    "page_worst_condition_f1": 0.9309,
+    "datasets": {
+      "letters52": {
+        "expected": 4241,
+        "processed": 4241,
+        "failed": 0,
+        "seconds": 115.0,
+        "step_counts": {
+          "gray": 4241,
+          "upscale": 4224,
+          "blur": 4241,
+          "flatten": 4241,
+          "clahe": 4241,
+          "remove_specks": 239,
+          "remove_edge_bar": 24
+        }
+      },
+      "handwritten": {
+        "expected": 22,
+        "processed": 22,
+        "failed": 0,
+        "seconds": 16.6,
+        "step_counts": {
+          "gray": 22,
+          "flatten": 22,
+          "deskew": 16,
+          "remove_lines": 11,
+          "remove_border": 13,
+          "remove_specks": 15,
+          "clahe": 9,
+          "downscale": 1,
+          "paper_mask": 1,
+          "remove_line_fragments": 7
+        }
+      },
+      "roboflow_sindhi_ocrf": {
+        "expected": 509,
+        "processed": 509,
+        "failed": 0,
+        "seconds": 72.1,
+        "step_counts": {
+          "gray": 509,
+          "flatten": 509,
+          "remove_specks": 7
+        }
+      }
+    },
+    "note": "Synthetic benchmark metrics (known ground truth); real images checked visually in results/step1/comparison_real_*.png and results/step1/debug/."
+  },
+  "git_commit": "2ce9aaf",
+  "timestamp": "2026-10-17T17:56:49+00:00"
+}

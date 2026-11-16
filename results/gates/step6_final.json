@@ -1,0 +1,109 @@
+{
+  "gate": "step6_final",
+  "status": "FAIL",
+  "checks": {
+    "final_test_one_minus_cer": {
+      "value": -0.6498,
+      "threshold": 0.9,
+      "op": ">=",
+      "passed": false
+    }
+  },
+  "extra": {
+    "test_set": "FINAL_TEST, 7 pages, whole page",
+    "predicted_before_run": "CER 0.28-0.40 (1 - CER 0.60-0.72), FAIL (docs/STEP6_testing.md, recorded before the run)",
+    "metrics": {
+      "word_accuracy_before": -1.6054,
+      "word_accuracy": -1.5102,
+      "cer_before": 1.7094,
+      "cer": 1.6498,
+      "clean_tokens": 31,
+      "clean_changed": 1,
+      "false_correction_rate": 0.0323,
+      "one_minus_cer": -0.6498,
+      "pages": 7,
+      "words": 147,
+      "words_read": 396,
+      "lines_reference": 23,
+      "lines_found": 119,
+      "cer_95ci_over_pages": [
+        0.3194,
+        3.5269
+      ],
+      "per_writer": {
+        "D": {
+          "word_accuracy_before": -6.1667,
+          "word_accuracy": -6.1667,
+          "cer_before": 4.9497,
+          "cer": 4.7236,
+          "clean_tokens": 5,
+          "clean_changed": 0,
+          "false_correction_rate": 0.0,
+          "one_minus_cer": -3.7236,
+          "pages": 2,
+          "words": 42,
+          "words_read": 306,
+          "lines_reference": 6,
+          "lines_found": 99
+        },
+        "H": {
+          "word_accuracy_before": 0.3684,
+          "word_accuracy": 0.7368,
+          "cer_before": 0.1867,
+          "cer": 0.1733,
+          "clean_tokens": 8,
+          "clean_changed": 0,
+          "false_correction_rate": 0.0,
+          "one_minus_cer": 0.8267,
+          "pages": 2,
+          "words": 19,
+          "words_read": 15,
+          "lines_reference": 3,
+          "lines_found": 3
+        },
+        "J": {
+          "word_accuracy_before": 0.186,
+          "word_accuracy": 0.2674,
+          "cer_before": 0.3728,
+          "cer": 0.3879,
+          "clean_tokens": 18,
+          "clean_changed": 1,
+          "false_correction_rate": 0.0556,
+          "one_minus_cer": 0.6121,
+          "pages": 3,
+          "words": 86,
+          "words_read": 75,
+          "lines_reference": 14,
+          "lines_found": 17
+        }
+      }
+    },
+    "reference_TESS_TEST_whole_page": {
+      "word_accuracy_before": 0.2459,
+      "word_accuracy": 0.377,
+      "cer_before": 0.3067,
+      "cer": 0.2907,
+      "clean_tokens": 15,
+      "clean_changed": 0,
+      "false_correction_rate": 0.0,
+      "one_minus_cer": 0.7093,
+      "pages": 3,
+      "words": 61,
+      "words_read": 55,
+      "lines_reference": 11,
+      "lines_found": 12,
+      "cer_95ci_over_pages": [
+        0.1463,
+        0.3734
+      ]
+    }
+  },
+  "git_commit": "9da2765",
+  "timestamp": "2026-11-14T17:55:58+00:00",
+  "user_decision": {
+    "accepted": true,
+    "decided_by": "user (2026-11-14, option 1)",
+    "reason": "FINAL_TEST (whole page, measured once) 1-CER -0.650 < 0.90: writer D's two pages (faint pencil photo, dotted rulings) were read as hundreds of false words; writers H + J CER 0.354. Accepted; the project closes as it stands. Pencil and ruled/dotted paper are documented as not supported; non-text filtering and ruling removal are future work and need new held-out test pages.",
+    "timestamp": "2026-11-14T18:02:33+00:00"
+  }
+}

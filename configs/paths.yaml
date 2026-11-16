@@ -1,0 +1,47 @@
+# Every path the project uses, relative to the repository root.
+# Scripts must get paths from here (via common.paths.load_paths), never hardcode them.
+
+configs:
+  step1: configs/step1_preprocess.yaml
+  letter_map: configs/letter_map.yaml
+  step3: configs/step3_tesseract.yaml
+  step4: configs/step4_xlmr.yaml
+
+raw:
+  letters52: data/raw/letters52
+  handwritten_images: data/raw/handwritten/images
+  handwritten_text_original: data/raw/handwritten/text_original
+  handwritten_text_gt: data/raw/handwritten/text_gt
+  roboflow_sindhi_ocrf: data/raw/roboflow_sindhi_ocrf
+  corpus_wikipedia_sd: data/raw/corpus/wikipedia_sd
+  handwritten_batch2: data/raw/handwritten_batch2          # 2026-11-13 copy of ~/Desktop/new data
+  handwritten_batch2_text_corrected: data/raw/handwritten_batch2/text_corrected   # our drafts (tracked)
+  handwritten_batch3: data/raw/handwritten_batch3          # 2026-11-14 copy of ~/Desktop/new data/data (see PROVENANCE)
+  pos_handwritten: data/raw/pos_handwritten                # 2026-11-14 copy of ~/Downloads/POS Tagging on Handwritten Sindhi Sentences 2
+  pos_text: data/raw/pos_text                              # 2026-11-14 copy of ~/Downloads/Sindhi-Pos-Tagging-main
+
+preprocessed:
+  letters52: data/preprocessed/letters52
+  letters52_gray: data/preprocessed/letters52_gray   # pre-threshold grayscale (Step 2 experiment)
+  handwritten: data/preprocessed/handwritten
+  roboflow_sindhi_ocrf: data/preprocessed/roboflow_sindhi_ocrf
+
+splits:
+  letters52: data/splits/letters52          # manifest.csv (unique images) + split.csv
+  handwritten: data/splits/handwritten      # pairs.csv (story groups + split)
+  handwritten_batch2: data/splits/handwritten_batch2   # manifest.csv (status of every file)
+
+synthetic: data/synthetic
+
+results:
+  gates: results/gates
+  step1: results/step1
+  step1_debug: results/step1/debug
+  step3: results/step3
+  step4: results/step4
+
+logs:
+  step1: logs/step1
+
+checkpoints:
+  rembg: checkpoints/rembg                  # U2NET_HOME: rembg model weights live inside the repo

@@ -1,0 +1,108 @@
+# Step 1 preprocessing parameters. Tune here, not in code.
+
+# Core binarisation used by preprocess_image(). Chosen from the method comparison
+# (scripts/step1_compare_methods.py -> results/step1/method_comparison.md).
+method: flatten_sauvola          # pages: flatten_sauvola | flatten_otsu | flatten_adaptive
+gray_mode: auto                  # auto (best-separating channel) | luminance
+
+# Images whose longer side is <= this are single-letter crops ("glyph" profile).
+glyph_max_side: 160
+
+glyph:
+  # Single-letter crops are tiny, blurry and faint (ink only 10-45% darker than the paper), so they
+  # get their own recipe; see docs/STEP1_preprocessing.md for the evidence.
+  method: flatten_normalized_fixed
+  polarity: dark_ink             # all crops are dark ink on paper (letters52 photos; Step-5 crops come
+                                 # from already-cleaned pages). Auto-detection inverted 3 of 4241 wrongly.
+  target_height: 128             # upscale first so thin strokes and dots survive
+  max_upscale: 6.0
+  pre_blur_sigma: 1.0
+  bg_kernel_min_frac: 0.5        # the letter fills the crop: background kernel must be ~half the crop
+  clahe: always
+  min_dot_area_sw2: 0.10         # drop specks smaller than 0.10 * stroke_width^2 (a dot is ~0.8 sw^2)
+  deskew: false                  # a single glyph has no text line to align
+  remove_lines: false            # alif / long letter strokes can span the whole crop
+  remove_border: false           # tight crops: dots may legitimately touch the edge
+  remove_edge_bars: true         # ...but solid full-length bars along a side (paper edges) go
+
+page:
+  max_side: 2400                 # bigger photos are downscaled (keeps runtime sane, no visible loss)
+  sauvola_k: 0.2
+  polarity: auto                 # pages: detect dark backgrounds and invert
+  min_dot_area_sw2: 0.10
+  deskew: true
+  remove_lines: true
+  remove_border: true
+  remove_desk: true              # photo shows the table around the sheet -> keep only the sheet
+
+thresholds:
+  noise_sigma: 8.0               # estimated noise std above this -> non-local-means denoise
+  low_contrast: 0.40             # (p99 - p1)/255 below this -> CLAHE after flattening
+  uneven_illumination: 0.12      # reported only; flattening is always applied (harmless when even)
+  deskew_min_angle: 0.4          # degrees; smaller tilts are left alone
+  deskew_max_angle: 10.0
+
+background:
+  kernel_sw_factor: 4.0          # closing kernel >= 4x stroke width (must erase the strokes)
+  kernel_min_frac: 0.03          # ...and >= 3% of the longer side
+
+sauvola:
+  window_sw_factor: 12           # window ~ a few letters wide
+  window_min: 15
+  window_max: 101
+  k: 0.2                         # default; profiles override with sauvola_k
+
+normalized_fixed:
+  threshold: 100                 # after per-image normalisation ink ~0 and paper 255
+
+adaptive:
+  window_sw_factor: 12
+  window_min: 15
+  window_max: 101
+  c: 10
+
+clahe:
+  clip_limit: 1.0                # 2.0 amplified paper texture into speckles (synthetic sweep)
+  tile: 8
+
+lines:
+  h_frac: 0.5                    # ruled lines span most of the page; 0.25 also caught Devanagari headlines
+  v_frac: 0.5
+
+border:
+  area_frac: 0.01
+  span_frac: 0.6
+
+# Per-dataset overrides for the batch script.
+datasets:
+  letters52:
+    profile: glyph
+  handwritten:
+    profile: page
+  roboflow_sindhi_ocrf:
+    profile: page
+    deskew: false                # keep geometry identical so the COCO word boxes stay valid
+    remove_lines: false          # printed book pages have no ruled lines
+    max_side: null
+
+debug:
+  samples_per_dataset: 12
+  seed: 42
+
+# Synthetic benchmark used to choose the method and for the Step 1 gate.
+benchmark:
+  seed: 7
+  samples_per_condition: 6
+  glyph_samples: 60              # one condition decides the glyph method -> needs more samples
+  fonts:                         # macOS fonts with Sindhi glyphs; missing ones are skipped
+    - /System/Library/Fonts/GeezaPro.ttc
+    - /System/Library/Fonts/Supplemental/Damascus.ttc
+    - /System/Library/Fonts/Supplemental/Tahoma.ttf
+    - /System/Library/Fonts/SFArabic.ttf
+
+gate:
+  # Step 1 has no "90% accuracy" in the brief; these are the checks I defined (see docs/STEP1).
+  min_page_mean_f1: 0.90         # mean text-pixel F1 over the 11 synthetic page conditions
+  min_glyph_f1_vs_oracle: 0.95   # letter crops: >= 95% of the best possible global threshold
+  min_dot_recall: 0.90           # fraction of diacritic dots preserved (pages and crops)
+  max_deskew_error_deg: 1.0      # mean |estimated - true| tilt
