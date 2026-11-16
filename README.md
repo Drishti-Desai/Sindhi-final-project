@@ -48,6 +48,20 @@ pip install -r requirements.txt
 cp .env.example .env          # only needed for optional API keys
 ```
 
+## Model weights and dataset (downloads)
+
+The trained models and the dataset are too large for GitHub and are shared on Google Drive:
+
+| What | Link | Put it here |
+|---|---|---|
+| **Model weights** (`checkpoints/`) | [Google Drive — checkpoints](https://drive.google.com/drive/folders/1sszlHyeVVJ2DogQRKoE9GVO2WxMFs6FL?usp=sharing) | `checkpoints/` in the project folder |
+| **Dataset** | [Google Drive — dataset](https://drive.google.com/file/d/1jjF5QSCCp_OhrToxa9Sr5L6klX61ekMN/view?usp=drive_link) | `data/` in the project folder |
+
+The app needs these three model items: `checkpoints/step2_recognizer_ft/best.pt`,
+`checkpoints/step4_xlmr_mlm/best/` and `checkpoints/step4_xlmr_detector/best/` (plus
+`data/preprocessed/step4/lexicon.tsv`). The models and the dataset are covered by `LICENSE` and `DATASETS.md`:
+they may not be reused or redistributed without written permission, and the handwriting belongs to its writers.
+
 ## How to use
 
 ```bash
