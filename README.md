@@ -4,8 +4,8 @@ A Sindhi OCR system built one proven component at a time. Each step must pass it
 before the next step runs. Full plan and dataset findings: `PLAN.md`; per-step guides: `docs/`.
 **New to the project (person or AI assistant)? Start with `docs/PROJECT_CONTEXT.md`.**
 
-**Licence:** all rights reserved, no use without written permission (`LICENSE`). **Data:** no handwriting, transcriptions
-or model weights are included; datasets and their sources are listed in `DATASETS.md`.
+**Licence:** all rights reserved, no use without written permission (`LICENSE`). **Data:** raw datasets and model weights
+are not included; result figures show handwriting excerpts that may not be reused. Datasets and sources: `DATASETS.md`.
 
 ## Steps
 

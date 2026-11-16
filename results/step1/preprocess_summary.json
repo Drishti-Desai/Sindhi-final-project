@@ -1,0 +1,49 @@
+{
+  "datasets": {
+    "letters52": {
+      "expected": 4241,
+      "processed": 4241,
+      "failed": 0,
+      "seconds": 115.0,
+      "step_counts": {
+        "gray": 4241,
+        "upscale": 4224,
+        "blur": 4241,
+        "flatten": 4241,
+        "clahe": 4241,
+        "remove_specks": 239,
+        "remove_edge_bar": 24
+      }
+    },
+    "handwritten": {
+      "expected": 22,
+      "processed": 22,
+      "failed": 0,
+      "seconds": 16.6,
+      "step_counts": {
+        "gray": 22,
+        "flatten": 22,
+        "deskew": 16,
+        "remove_lines": 11,
+        "remove_border": 13,
+        "remove_specks": 15,
+        "clahe": 9,
+        "downscale": 1,
+        "paper_mask": 1,
+        "remove_line_fragments": 7
+      }
+    },
+    "roboflow_sindhi_ocrf": {
+      "expected": 509,
+      "processed": 509,
+      "failed": 0,
+      "seconds": 72.1,
+      "step_counts": {
+        "gray": 509,
+        "flatten": 509,
+        "remove_specks": 7
+      }
+    }
+  },
+  "small_mode": false
+}

@@ -1,0 +1,197 @@
+{
+  "run": "aux_synth",
+  "val": {
+    "n": 367,
+    "accuracy": 0.782,
+    "top3_accuracy": 0.8665,
+    "body_accuracy": 0.9128,
+    "dots_accuracy_given_body": 0.8567,
+    "per_family": {
+      "heh": {
+        "n": 7,
+        "accuracy": 0.571
+      },
+      "hamza": {
+        "n": 7,
+        "accuracy": 0.571
+      },
+      "feh": {
+        "n": 13,
+        "accuracy": 0.615
+      },
+      "jeem": {
+        "n": 52,
+        "accuracy": 0.692
+      },
+      "beh": {
+        "n": 72,
+        "accuracy": 0.694
+      },
+      "waw": {
+        "n": 7,
+        "accuracy": 0.714
+      },
+      "seen": {
+        "n": 15,
+        "accuracy": 0.8
+      },
+      "dal": {
+        "n": 42,
+        "accuracy": 0.833
+      },
+      "swash_kaf": {
+        "n": 6,
+        "accuracy": 0.833
+      },
+      "keheh": {
+        "n": 24,
+        "accuracy": 0.833
+      },
+      "keheh_heh": {
+        "n": 6,
+        "accuracy": 0.833
+      },
+      "yeh": {
+        "n": 6,
+        "accuracy": 0.833
+      },
+      "sad": {
+        "n": 14,
+        "accuracy": 0.857
+      },
+      "lam": {
+        "n": 7,
+        "accuracy": 0.857
+      },
+      "meem": {
+        "n": 7,
+        "accuracy": 0.857
+      },
+      "noon": {
+        "n": 14,
+        "accuracy": 0.857
+      },
+      "alif": {
+        "n": 8,
+        "accuracy": 0.875
+      },
+      "jeem_heh": {
+        "n": 8,
+        "accuracy": 0.875
+      },
+      "reh": {
+        "n": 24,
+        "accuracy": 0.875
+      },
+      "ain": {
+        "n": 13,
+        "accuracy": 0.923
+      },
+      "tah": {
+        "n": 9,
+        "accuracy": 1.0
+      },
+      "qaf": {
+        "n": 6,
+        "accuracy": 1.0
+      }
+    }
+  },
+  "test": {
+    "n": 873,
+    "accuracy": 0.7354,
+    "top3_accuracy": 0.8866,
+    "body_accuracy": 0.9107,
+    "dots_accuracy_given_body": 0.8075,
+    "per_family": {
+      "jeem": {
+        "n": 126,
+        "accuracy": 0.571
+      },
+      "beh": {
+        "n": 162,
+        "accuracy": 0.617
+      },
+      "dal": {
+        "n": 108,
+        "accuracy": 0.694
+      },
+      "seen": {
+        "n": 33,
+        "accuracy": 0.697
+      },
+      "qaf": {
+        "n": 15,
+        "accuracy": 0.733
+      },
+      "reh": {
+        "n": 52,
+        "accuracy": 0.769
+      },
+      "hamza": {
+        "n": 13,
+        "accuracy": 0.769
+      },
+      "sad": {
+        "n": 36,
+        "accuracy": 0.778
+      },
+      "meem": {
+        "n": 14,
+        "accuracy": 0.786
+      },
+      "yeh": {
+        "n": 14,
+        "accuracy": 0.786
+      },
+      "tah": {
+        "n": 36,
+        "accuracy": 0.806
+      },
+      "ain": {
+        "n": 36,
+        "accuracy": 0.806
+      },
+      "alif": {
+        "n": 17,
+        "accuracy": 0.824
+      },
+      "noon": {
+        "n": 26,
+        "accuracy": 0.846
+      },
+      "waw": {
+        "n": 13,
+        "accuracy": 0.846
+      },
+      "feh": {
+        "n": 35,
+        "accuracy": 0.857
+      },
+      "heh": {
+        "n": 14,
+        "accuracy": 0.857
+      },
+      "swash_kaf": {
+        "n": 16,
+        "accuracy": 0.875
+      },
+      "keheh": {
+        "n": 58,
+        "accuracy": 0.897
+      },
+      "keheh_heh": {
+        "n": 15,
+        "accuracy": 0.933
+      },
+      "jeem_heh": {
+        "n": 18,
+        "accuracy": 1.0
+      },
+      "lam": {
+        "n": 16,
+        "accuracy": 1.0
+      }
+    }
+  }
+}

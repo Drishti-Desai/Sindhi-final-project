@@ -1,0 +1,192 @@
+{
+  "test_accuracy": 0.7205,
+  "test_macro_f1": 0.7189,
+  "val_accuracy": 0.7575,
+  "best_epoch": 32,
+  "n_test": 873,
+  "n_test_sheets": 23,
+  "device": "mps",
+  "small_mode": false,
+  "top_confusions": [
+    {
+      "true": 15,
+      "true_letter": "چ",
+      "pred": 14,
+      "pred_letter": "ڃ",
+      "count": 6
+    },
+    {
+      "true": 3,
+      "true_letter": "ٻ",
+      "pred": 2,
+      "pred_letter": "ب",
+      "count": 5
+    },
+    {
+      "true": 4,
+      "true_letter": "ڀ",
+      "pred": 3,
+      "pred_letter": "ٻ",
+      "count": 5
+    },
+    {
+      "true": 15,
+      "true_letter": "چ",
+      "pred": 16,
+      "pred_letter": "ڇ",
+      "count": 5
+    },
+    {
+      "true": 20,
+      "true_letter": "ڌ",
+      "pred": 21,
+      "pred_letter": "ڏ",
+      "count": 5
+    },
+    {
+      "true": 2,
+      "true_letter": "ب",
+      "pred": 3,
+      "pred_letter": "ٻ",
+      "count": 4
+    },
+    {
+      "true": 4,
+      "true_letter": "ڀ",
+      "pred": 10,
+      "pred_letter": "پ",
+      "count": 4
+    },
+    {
+      "true": 9,
+      "true_letter": "ث",
+      "pred": 8,
+      "pred_letter": "ٺ",
+      "count": 4
+    },
+    {
+      "true": 11,
+      "true_letter": "ج",
+      "pred": 17,
+      "pred_letter": "ح",
+      "count": 4
+    },
+    {
+      "true": 12,
+      "true_letter": "ڄ",
+      "pred": 11,
+      "pred_letter": "ج",
+      "count": 4
+    },
+    {
+      "true": 27,
+      "true_letter": "ز",
+      "pred": 24,
+      "pred_letter": "ذ",
+      "count": 4
+    },
+    {
+      "true": 5,
+      "true_letter": "ت",
+      "pred": 8,
+      "pred_letter": "ٺ",
+      "count": 3
+    },
+    {
+      "true": 6,
+      "true_letter": "ٿ",
+      "pred": 9,
+      "pred_letter": "ث",
+      "count": 3
+    },
+    {
+      "true": 7,
+      "true_letter": "ٽ",
+      "pred": 5,
+      "pred_letter": "ت",
+      "count": 3
+    },
+    {
+      "true": 9,
+      "true_letter": "ث",
+      "pred": 5,
+      "pred_letter": "ت",
+      "count": 3
+    },
+    {
+      "true": 10,
+      "true_letter": "پ",
+      "pred": 2,
+      "pred_letter": "ب",
+      "count": 3
+    },
+    {
+      "true": 11,
+      "true_letter": "ج",
+      "pred": 12,
+      "pred_letter": "ڄ",
+      "count": 3
+    },
+    {
+      "true": 14,
+      "true_letter": "ڃ",
+      "pred": 11,
+      "pred_letter": "ج",
+      "count": 3
+    },
+    {
+      "true": 23,
+      "true_letter": "ڍ",
+      "pred": 22,
+      "pred_letter": "ڊ",
+      "count": 3
+    },
+    {
+      "true": 27,
+      "true_letter": "ز",
+      "pred": 26,
+      "pred_letter": "ڙ",
+      "count": 3
+    },
+    {
+      "true": 29,
+      "true_letter": "ش",
+      "pred": 31,
+      "pred_letter": "ض",
+      "count": 3
+    },
+    {
+      "true": 33,
+      "true_letter": "ظ",
+      "pred": 32,
+      "pred_letter": "ط",
+      "count": 3
+    },
+    {
+      "true": 35,
+      "true_letter": "غ",
+      "pred": 34,
+      "pred_letter": "ع",
+      "count": 3
+    },
+    {
+      "true": 39,
+      "true_letter": "ڪ",
+      "pred": 40,
+      "pred_letter": "ک",
+      "count": 3
+    },
+    {
+      "true": 50,
+      "true_letter": "ه",
+      "pred": 49,
+      "pred_letter": "و",
+      "count": 3
+    }
+  ],
+  "run": "baseline",
+  "config": {
+    "aux_weight": 0.0,
+    "synthetic_p": 0.0
+  }
+}

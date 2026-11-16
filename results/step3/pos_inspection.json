@@ -1,0 +1,70 @@
+{
+  "text": {
+    "sentences": 676,
+    "tokens": 6869,
+    "removed": {
+      "duplicate sentence": 157,
+      "no Sindhi words": 1
+    },
+    "kept_sentences": 518,
+    "kept_words": 4764,
+    "kept_unique_words": 1266,
+    "odd_characters": {},
+    "upos": {
+      "NOUN": 1543,
+      "VERB": 1096,
+      "ADP": 1046,
+      "ADV": 383,
+      "PERIOD": 680,
+      "ADJ": 615,
+      "NUM": 44,
+      "AUX": 407,
+      "CONJ": 168,
+      "PRON": 270,
+      "DET": 225,
+      "PROPN": 303,
+      "SYM": 14,
+      "PUNC": 40,
+      "X": 21,
+      "SCON": 5,
+      "INTJ": 8,
+      "AdJ": 1
+    }
+  },
+  "images": {
+    "files": 998,
+    "formats": {
+      "JPEG": 997,
+      "BMP": 1
+    },
+    "exact_duplicates_within": 22,
+    "near_duplicates_within": 1,
+    "exact_duplicates_of_our_images": 0,
+    "drafted": 975,
+    "lines_per_image": {
+      "1": 756,
+      "3": 47,
+      "2": 143,
+      "6": 3,
+      "4": 13,
+      "5": 8,
+      "10": 1,
+      "7": 3,
+      "9": 1
+    },
+    "best_match_cer_percentiles": {
+      "0": 0.444,
+      "1": 0.551,
+      "5": 0.592,
+      "25": 0.653,
+      "50": 0.69
+    },
+    "best_match_cer_below": {
+      "0.2": 0,
+      "0.3": 0,
+      "0.4": 0,
+      "0.5": 1
+    },
+    "best_source_when_below_0.4": {}
+  }
+}

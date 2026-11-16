@@ -1,0 +1,134 @@
+[gate] WARNING: 'step2_cnn_transformer' is FAIL but was accepted by user (2026-11-14, option 1) on 2026-11-14: Composed-word test 1-CER 0.866 < 0.90 after fine-tuning on batch-2 real handwriting; accepted. Use the fine-tuned recognizer checkpoints/step2_recognizer_ft/best.pt. The unseen-writer result is the main reference number for real handwriting.
+tuning 110 pages / 1175 word boxes; TEST_UNSEEN_WRITER 7 pages / 144 word boxes; TESS_TEST 3 pages / 56 word boxes
+chosen on tuning pages: tesseract {'lang': 'urd', 'psm': 6, 'input': 'binary', 'scale': 1.5} word F1 0.5488; own {'finder': 'tracked', 'gap_h': 0.3, 'gap_med': 0.75} word F1 0.6621
+  tuning best snd            psm  4 gray   x1.0: word F1 0.521 (P 0.627 R 0.445), line F1 0.597
+  tuning best urd            psm  6 binary x1.5: word F1 0.549 (P 0.635 R 0.483), line F1 0.643
+  tuning best ara            psm  6 binary x1.5: word F1 0.539 (P 0.603 R 0.487), line F1 0.649
+  tuning best script/Arabic  psm  6 binary x1.5: word F1 0.534 (P 0.596 R 0.484), line F1 0.656
+{
+ "TEST_UNSEEN_WRITER": {
+  "tesseract": {
+   "word_boxes": {
+    "precision": 0.8652,
+    "recall": 0.5347,
+    "f1": 0.6609,
+    "tp": 77,
+    "fp": 12,
+    "fn": 67
+   },
+   "line_boxes": {
+    "precision": 0.9167,
+    "recall": 0.6471,
+    "f1": 0.7586,
+    "tp": 11,
+    "fp": 1,
+    "fn": 6
+   },
+   "ignored_boxes": 3,
+   "gt_words_split": 2,
+   "pred_boxes_merging_2plus": 11,
+   "recognizer_on_these_boxes": {
+    "cer": 0.4808,
+    "wer": 0.6712
+   },
+   "tesseract_text": {
+    "cer": 0.532,
+    "wer": 0.7945
+   }
+  },
+  "own": {
+   "word_boxes": {
+    "precision": 0.8562,
+    "recall": 0.8681,
+    "f1": 0.8621,
+    "tp": 125,
+    "fp": 21,
+    "fn": 19
+   },
+   "line_boxes": {
+    "precision": 0.8947,
+    "recall": 1.0,
+    "f1": 0.9444,
+    "tp": 17,
+    "fp": 2,
+    "fn": 0
+   },
+   "ignored_boxes": 2,
+   "gt_words_split": 10,
+   "pred_boxes_merging_2plus": 9,
+   "recognizer_on_these_boxes": {
+    "cer": 0.2119,
+    "wer": 0.5822
+   }
+  },
+  "ground_truth_boxes": {
+   "recognizer_on_these_boxes": {
+    "cer": 0.0811,
+    "wer": 0.3151
+   }
+  }
+ },
+ "TESS_TEST": {
+  "tesseract": {
+   "word_boxes": {
+    "precision": 0.72,
+    "recall": 0.3214,
+    "f1": 0.4444,
+    "tp": 18,
+    "fp": 7,
+    "fn": 38
+   },
+   "line_boxes": {
+    "precision": 0.75,
+    "recall": 0.3333,
+    "f1": 0.4615,
+    "tp": 3,
+    "fp": 1,
+    "fn": 6
+   },
+   "ignored_boxes": 6,
+   "gt_words_split": 5,
+   "pred_boxes_merging_2plus": 0,
+   "recognizer_on_these_boxes": {
+    "cer": 0.7093,
+    "wer": 0.9344
+   },
+   "tesseract_text": {
+    "cer": 0.7764,
+    "wer": 0.9672
+   }
+  },
+  "own": {
+   "word_boxes": {
+    "precision": 0.6849,
+    "recall": 0.8929,
+    "f1": 0.7752,
+    "tp": 50,
+    "fp": 23,
+    "fn": 6
+   },
+   "line_boxes": {
+    "precision": 0.9,
+    "recall": 1.0,
+    "f1": 0.9474,
+    "tp": 9,
+    "fp": 1,
+    "fn": 0
+   },
+   "ignored_boxes": 7,
+   "gt_words_split": 15,
+   "pred_boxes_merging_2plus": 0,
+   "recognizer_on_these_boxes": {
+    "cer": 0.3355,
+    "wer": 0.9508
+   }
+  },
+  "ground_truth_boxes": {
+   "recognizer_on_these_boxes": {
+    "cer": 0.2268,
+    "wer": 0.6066
+   }
+  }
+ }
+}
+[gate] step3_tesseract: FAIL (word-box F1 0.6609 vs 0.9)

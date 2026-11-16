@@ -1,0 +1,24 @@
+{
+  "pages": 8,
+  "true_words": 71,
+  "pieces": 101,
+  "joins": {
+    "pieces": 0,
+    "oracle_joins": 37,
+    "rule_word_list": 10,
+    "rule_recognizer": 46
+  },
+  "cer_our_order": {
+    "pieces": 0.4459,
+    "oracle_joins": 0.2324,
+    "rule_word_list": 0.3757,
+    "rule_recognizer": 0.2946
+  },
+  "cer_true_order": {
+    "pieces": 0.4081,
+    "oracle_joins": 0.1919,
+    "rule_word_list": 0.3378,
+    "rule_recognizer": 0.2486
+  },
+  "reference_cer_true_word_crops": 0.1216
+}

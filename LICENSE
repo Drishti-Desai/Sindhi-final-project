@@ -12,8 +12,11 @@ No licence is granted. Without prior written permission from the copyright holde
     to this project.
 
 Personal handwriting data. The handwritten pages, word images and transcriptions collected for this project
-belong to their writers and are NOT included in this repository. They may not be requested, reconstructed or
-redistributed without the written consent of the writers and the copyright holders.
+belong to their writers. The raw datasets are NOT included in this repository. The result figures in results/
+(for example results/step2/real_words_review/, results/step1/comparison_real_*.png, results/step2/cnn_errors.png)
+show handwriting excerpts only to document the results; they remain the writers' property and may not be copied,
+reused, used for training or redistributed in any form without the written consent of the writers and the
+copyright holders.
 
 Third-party material keeps its own licence. Nothing in this notice changes the terms of third-party datasets,
 models or libraries listed in DATASETS.md and requirements.txt (for example, Wikipedia text is CC BY-SA 3.0,

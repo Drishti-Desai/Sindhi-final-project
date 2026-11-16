@@ -1,0 +1,140 @@
+{
+  "splits": {
+    "legal": {
+      "train": {
+        "sentences": 1722,
+        "words": 20534
+      },
+      "val": {
+        "sentences": 215,
+        "words": 2564
+      },
+      "test": {
+        "sentences": 169,
+        "words": 1967
+      }
+    },
+    "pos": {
+      "train": {
+        "sentences": 414,
+        "words": 3786
+      },
+      "val": {
+        "sentences": 52,
+        "words": 526
+      },
+      "test": {
+        "sentences": 52,
+        "words": 452
+      }
+    },
+    "wiki": {
+      "train": {
+        "sentences": 243553,
+        "words": 3987831
+      },
+      "val": {
+        "sentences": 1001,
+        "words": 16498
+      },
+      "test": {
+        "sentences": 1037,
+        "words": 17044
+      }
+    }
+  },
+  "split_stats": {
+    "legal": {
+      "rows": 1060,
+      "groups": 1039,
+      "groups_with_test_overlap": 19,
+      "forced_val": 29,
+      "forced_train": 201
+    },
+    "wiki": {
+      "articles": 16928,
+      "sentences_dropped_test_overlap": 25
+    }
+  },
+  "lexicon_words": 47422,
+  "error_model": {
+    "pairs": {
+      "composed_val": 600,
+      "real_val": 71
+    },
+    "word_error_rate": 0.5782,
+    "merge_rate": 0.0757,
+    "split_rate": 0.2145,
+    "op_share": {
+      "sub": 0.801,
+      "del": 0.142,
+      "ins": 0.057
+    },
+    "edits_per_wrong_word": {
+      "1": 239,
+      "2": 100,
+      "3": 49
+    },
+    "top_substitutions": [
+      "ن->م 45",
+      "و->ڻ 25",
+      "ه->و 24",
+      "ل->ڱ 19",
+      "ڪ->ق 15",
+      "و->ر 13",
+      "م->ل 13",
+      "و->د 12",
+      "ر->ڻ 11",
+      "ا->ي 11",
+      "گ->ڪ 10.5",
+      "ر->ز 9.5",
+      "ي->ڪ 9",
+      "ي->ک 7",
+      "ڊ->د 6.5"
+    ],
+    "top_deletions": [
+      "ا 42",
+      "و 8",
+      "ه 7",
+      "ب 6",
+      "ر 5",
+      "پ 4",
+      "ن 4",
+      "ڪ 3"
+    ],
+    "top_insertions": [
+      "ا 12",
+      "ء 7",
+      "، 4",
+      "گ 3",
+      "د 2",
+      "ح 2",
+      "پ 1",
+      "ع 1"
+    ]
+  },
+  "corrupted_domain_val": {
+    "sentences": 267,
+    "words": 3090,
+    "words_made_wrong": 618
+  },
+  "corrupted_domain_test": {
+    "sentences": 221,
+    "words": 2419,
+    "words_made_wrong": 484
+  },
+  "corrupted_wiki_val": {
+    "sentences": 1001,
+    "words": 16497,
+    "words_made_wrong": 3299
+  },
+  "corrupted_wiki_test": {
+    "sentences": 1037,
+    "words": 17040,
+    "words_made_wrong": 3408
+  },
+  "real_val": {
+    "crops": 71,
+    "pages": 8
+  }
+}

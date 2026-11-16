@@ -1,0 +1,60 @@
+{
+  "model": "checkpoints/step2_recognizer_ft/best.pt",
+  "best_epoch": 8,
+  "best_val_mean_1_minus_cer": 0.8848,
+  "device": "mps",
+  "vocab_size": 82,
+  "labels": {
+    "real_test": "writers H, J: seen in training",
+    "real_test_unseen": "unseen writer (purple pen)"
+  },
+  "sets": {
+    "composed_test": {
+      "n": 2000,
+      "cer": 0.134,
+      "one_minus_cer": 0.866,
+      "cer_no_punct": 0.134,
+      "word_accuracy": 0.506
+    },
+    "printed_test": {
+      "n": 2000,
+      "cer": 0.0226,
+      "one_minus_cer": 0.9774,
+      "cer_no_punct": 0.0224,
+      "word_accuracy": 0.9
+    },
+    "real_test": {
+      "n": 56,
+      "cer": 0.2265,
+      "one_minus_cer": 0.7735,
+      "cer_no_punct": 0.2275,
+      "word_accuracy": 0.4286,
+      "per_writer": {
+        "H": {
+          "n": 9,
+          "cer": 0.0303,
+          "word_accuracy": 0.8889
+        },
+        "J": {
+          "n": 47,
+          "cer": 0.2587,
+          "word_accuracy": 0.3404
+        }
+      }
+    },
+    "real_test_unseen": {
+      "n": 144,
+      "cer": 0.0881,
+      "one_minus_cer": 0.9119,
+      "cer_no_punct": 0.0678,
+      "word_accuracy": 0.7153,
+      "per_writer": {
+        "purple_pen": {
+          "n": 144,
+          "cer": 0.0881,
+          "word_accuracy": 0.7153
+        }
+      }
+    }
+  }
+}

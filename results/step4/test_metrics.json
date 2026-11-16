@@ -1,0 +1,362 @@
+{
+  "rules": "variant and weights chosen on validation (val_comparison.json); test measured once",
+  "final_variant": "xlmr_sindhi_det",
+  "reference_only": "xlmr_base",
+  "weights": {
+    "xlmr_sindhi_det": {
+      "gamma": 0.3198551837368626,
+      "tau_known": 1.5,
+      "theta": 0.8405416345986345,
+      "alpha": 3.0,
+      "beta": 0.24028456335798487,
+      "eta": 0.0,
+      "tau_oov": -2.528730217005257
+    },
+    "xlmr_base": {
+      "gamma": 0.26231033836941986,
+      "tau_known": 2.978754952969621,
+      "theta": 1.0,
+      "alpha": 2.4,
+      "beta": 0.45970946445359206,
+      "eta": 1.0774757090635023,
+      "tau_oov": 1.471223056686065
+    },
+    "lexicon": {
+      "gamma": 0.0,
+      "tau_known": 99.0,
+      "theta": 1.0,
+      "alpha": 1.9735898551215834,
+      "beta": 0.4186083007903795,
+      "eta": 3.871607080709216,
+      "tau_oov": 1.0273884798515556
+    }
+  },
+  "set_sizes": {
+    "domain_test": {
+      "items": 221,
+      "words": 2419
+    },
+    "wiki_test": {
+      "items": 1037,
+      "words": 17040
+    },
+    "unseen_crops": {
+      "items": 7,
+      "words": 144
+    },
+    "hj_crops": {
+      "items": 3,
+      "words": 56
+    },
+    "unseen_pages": {
+      "items": 7,
+      "words": 144
+    },
+    "hj_pages": {
+      "items": 3,
+      "words": 56
+    }
+  },
+  "test": {
+    "none": {
+      "domain_test": {
+        "word_accuracy_before": 0.7751,
+        "word_accuracy": 0.7751,
+        "cer_before": 0.0517,
+        "cer": 0.0517,
+        "clean_tokens": 1935,
+        "clean_changed": 0,
+        "false_correction_rate": 0.0
+      },
+      "wiki_test": {
+        "word_accuracy_before": 0.7724,
+        "word_accuracy": 0.7724,
+        "cer_before": 0.0497,
+        "cer": 0.0497,
+        "clean_tokens": 13632,
+        "clean_changed": 0,
+        "false_correction_rate": 0.0
+      },
+      "unseen_crops": {
+        "word_accuracy_before": 0.7153,
+        "word_accuracy": 0.7153,
+        "cer_before": 0.0707,
+        "cer": 0.0707,
+        "clean_tokens": 103,
+        "clean_changed": 0,
+        "false_correction_rate": 0.0
+      },
+      "hj_crops": {
+        "word_accuracy_before": 0.4286,
+        "word_accuracy": 0.4286,
+        "cer_before": 0.1847,
+        "cer": 0.1847,
+        "clean_tokens": 24,
+        "clean_changed": 0,
+        "false_correction_rate": 0.0
+      },
+      "unseen_pages": {
+        "word_accuracy_before": 0.4236,
+        "word_accuracy": 0.4236,
+        "cer_before": 0.2078,
+        "cer": 0.2078,
+        "clean_tokens": 74,
+        "clean_changed": 0,
+        "false_correction_rate": 0.0
+      },
+      "hj_pages": {
+        "word_accuracy_before": 0.0714,
+        "word_accuracy": 0.0714,
+        "cer_before": 0.3206,
+        "cer": 0.3206,
+        "clean_tokens": 21,
+        "clean_changed": 0,
+        "false_correction_rate": 0.0
+      },
+      "hj_crops_H": {
+        "word_accuracy_before": 0.8889,
+        "word_accuracy": 0.8889,
+        "cer_before": 0.0244,
+        "cer": 0.0244,
+        "clean_tokens": 8,
+        "clean_changed": 0,
+        "false_correction_rate": 0.0
+      },
+      "hj_crops_J": {
+        "word_accuracy_before": 0.3404,
+        "word_accuracy": 0.3404,
+        "cer_before": 0.2114,
+        "cer": 0.2114,
+        "clean_tokens": 16,
+        "clean_changed": 0,
+        "false_correction_rate": 0.0
+      }
+    },
+    "lexicon": {
+      "domain_test": {
+        "word_accuracy_before": 0.7751,
+        "word_accuracy": 0.8425,
+        "cer_before": 0.0517,
+        "cer": 0.041,
+        "clean_tokens": 1935,
+        "clean_changed": 25,
+        "false_correction_rate": 0.0129
+      },
+      "wiki_test": {
+        "word_accuracy_before": 0.7724,
+        "word_accuracy": 0.8084,
+        "cer_before": 0.0497,
+        "cer": 0.0466,
+        "clean_tokens": 13632,
+        "clean_changed": 510,
+        "false_correction_rate": 0.0374
+      },
+      "unseen_crops": {
+        "word_accuracy_before": 0.7153,
+        "word_accuracy": 0.7292,
+        "cer_before": 0.0707,
+        "cer": 0.0722,
+        "clean_tokens": 103,
+        "clean_changed": 3,
+        "false_correction_rate": 0.0291
+      },
+      "hj_crops": {
+        "word_accuracy_before": 0.4286,
+        "word_accuracy": 0.4286,
+        "cer_before": 0.1847,
+        "cer": 0.2021,
+        "clean_tokens": 24,
+        "clean_changed": 1,
+        "false_correction_rate": 0.0417
+      },
+      "unseen_pages": {
+        "word_accuracy_before": 0.4236,
+        "word_accuracy": 0.4653,
+        "cer_before": 0.2078,
+        "cer": 0.2121,
+        "clean_tokens": 74,
+        "clean_changed": 0,
+        "false_correction_rate": 0.0
+      },
+      "hj_pages": {
+        "word_accuracy_before": 0.0714,
+        "word_accuracy": -0.0179,
+        "cer_before": 0.3206,
+        "cer": 0.3275,
+        "clean_tokens": 21,
+        "clean_changed": 0,
+        "false_correction_rate": 0.0
+      },
+      "hj_crops_H": {
+        "word_accuracy_before": 0.8889,
+        "word_accuracy": 0.7778,
+        "cer_before": 0.0244,
+        "cer": 0.0488,
+        "clean_tokens": 8,
+        "clean_changed": 0,
+        "false_correction_rate": 0.0
+      },
+      "hj_crops_J": {
+        "word_accuracy_before": 0.3404,
+        "word_accuracy": 0.3617,
+        "cer_before": 0.2114,
+        "cer": 0.2276,
+        "clean_tokens": 16,
+        "clean_changed": 1,
+        "false_correction_rate": 0.0625
+      }
+    },
+    "xlmr_base": {
+      "domain_test": {
+        "word_accuracy_before": 0.7751,
+        "word_accuracy": 0.8735,
+        "cer_before": 0.0517,
+        "cer": 0.0358,
+        "clean_tokens": 1935,
+        "clean_changed": 31,
+        "false_correction_rate": 0.016
+      },
+      "wiki_test": {
+        "word_accuracy_before": 0.7724,
+        "word_accuracy": 0.8506,
+        "cer_before": 0.0497,
+        "cer": 0.0407,
+        "clean_tokens": 13632,
+        "clean_changed": 407,
+        "false_correction_rate": 0.0299
+      },
+      "unseen_crops": {
+        "word_accuracy_before": 0.7153,
+        "word_accuracy": 0.7847,
+        "cer_before": 0.0707,
+        "cer": 0.0577,
+        "clean_tokens": 103,
+        "clean_changed": 1,
+        "false_correction_rate": 0.0097
+      },
+      "hj_crops": {
+        "word_accuracy_before": 0.4286,
+        "word_accuracy": 0.5536,
+        "cer_before": 0.1847,
+        "cer": 0.1847,
+        "clean_tokens": 24,
+        "clean_changed": 1,
+        "false_correction_rate": 0.0417
+      },
+      "unseen_pages": {
+        "word_accuracy_before": 0.4236,
+        "word_accuracy": 0.4653,
+        "cer_before": 0.2078,
+        "cer": 0.2078,
+        "clean_tokens": 74,
+        "clean_changed": 1,
+        "false_correction_rate": 0.0135
+      },
+      "hj_pages": {
+        "word_accuracy_before": 0.0714,
+        "word_accuracy": 0.1607,
+        "cer_before": 0.3206,
+        "cer": 0.3171,
+        "clean_tokens": 21,
+        "clean_changed": 0,
+        "false_correction_rate": 0.0
+      },
+      "hj_crops_H": {
+        "word_accuracy_before": 0.8889,
+        "word_accuracy": 0.8889,
+        "cer_before": 0.0244,
+        "cer": 0.0732,
+        "clean_tokens": 8,
+        "clean_changed": 0,
+        "false_correction_rate": 0.0
+      },
+      "hj_crops_J": {
+        "word_accuracy_before": 0.3404,
+        "word_accuracy": 0.4894,
+        "cer_before": 0.2114,
+        "cer": 0.2033,
+        "clean_tokens": 16,
+        "clean_changed": 1,
+        "false_correction_rate": 0.0625
+      }
+    },
+    "xlmr_sindhi_det": {
+      "domain_test": {
+        "word_accuracy_before": 0.7751,
+        "word_accuracy": 0.8896,
+        "cer_before": 0.0517,
+        "cer": 0.0348,
+        "clean_tokens": 1935,
+        "clean_changed": 40,
+        "false_correction_rate": 0.0207
+      },
+      "wiki_test": {
+        "word_accuracy_before": 0.7724,
+        "word_accuracy": 0.8583,
+        "cer_before": 0.0497,
+        "cer": 0.0419,
+        "clean_tokens": 13632,
+        "clean_changed": 586,
+        "false_correction_rate": 0.043
+      },
+      "unseen_crops": {
+        "word_accuracy_before": 0.7153,
+        "word_accuracy": 0.7917,
+        "cer_before": 0.0707,
+        "cer": 0.0505,
+        "clean_tokens": 103,
+        "clean_changed": 3,
+        "false_correction_rate": 0.0291
+      },
+      "hj_crops": {
+        "word_accuracy_before": 0.4286,
+        "word_accuracy": 0.6071,
+        "cer_before": 0.1847,
+        "cer": 0.1777,
+        "clean_tokens": 24,
+        "clean_changed": 1,
+        "false_correction_rate": 0.0417
+      },
+      "unseen_pages": {
+        "word_accuracy_before": 0.4236,
+        "word_accuracy": 0.5139,
+        "cer_before": 0.2078,
+        "cer": 0.1934,
+        "clean_tokens": 74,
+        "clean_changed": 1,
+        "false_correction_rate": 0.0135
+      },
+      "hj_pages": {
+        "word_accuracy_before": 0.0714,
+        "word_accuracy": 0.1964,
+        "cer_before": 0.3206,
+        "cer": 0.3206,
+        "clean_tokens": 21,
+        "clean_changed": 0,
+        "false_correction_rate": 0.0
+      },
+      "hj_crops_H": {
+        "word_accuracy_before": 0.8889,
+        "word_accuracy": 0.8889,
+        "cer_before": 0.0244,
+        "cer": 0.0732,
+        "clean_tokens": 8,
+        "clean_changed": 0,
+        "false_correction_rate": 0.0
+      },
+      "hj_crops_J": {
+        "word_accuracy_before": 0.3404,
+        "word_accuracy": 0.5532,
+        "cer_before": 0.2114,
+        "cer": 0.1951,
+        "clean_tokens": 16,
+        "clean_changed": 1,
+        "false_correction_rate": 0.0625
+      }
+    }
+  },
+  "step2_reference_unseen_crops": {
+    "word_accuracy": 0.7153,
+    "one_minus_cer": 0.9119
+  }
+}

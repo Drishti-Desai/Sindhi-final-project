@@ -1,8 +1,11 @@
 # Datasets and models used — references and data protection
 
-This project used the datasets below. **None of the raw data, handwriting images, word crops, transcriptions or
-trained model weights are included in this repository.** Writers are identified only by letter codes (A, D, H, J,
-…); their names are not recorded anywhere in the code or documentation.
+This project used the datasets below. **The raw datasets and trained model weights are not included in this
+repository.** The result files in `results/` include evaluation outputs (metrics, recognized and reference text of
+test words and pages) and 19 figures that show **handwriting excerpts** (letter crops, word crops, page examples) to
+document the results. These excerpts remain the writers' property and must not be reused (see `LICENSE`). Writers
+are identified only by letter codes (A, D, H, J, …); their names are not recorded anywhere in the code or
+documentation.
 
 ## Personal / project-collected data (private — not published)
 
@@ -36,7 +39,8 @@ Libraries and their versions are listed in `requirements.txt`. Full reference li
 
 ## Data protection notes
 
-- Handwriting images, word crops and page transcriptions are excluded from this repository.
+- The handwriting datasets are excluded; only the 19 result figures in `results/` show handwriting excerpts, and
+  the result CSV/JSON files contain recognized and reference text of test words and pages.
 - Trained model weights are not published, because they were trained on private handwriting and on text whose
   licence is unknown.
 - Requests for data access must be made to the project team; access requires the writers' written consent.

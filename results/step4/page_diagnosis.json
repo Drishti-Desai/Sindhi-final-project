@@ -1,0 +1,89 @@
+{
+  "val_pages": [
+    "A34",
+    "A40",
+    "H102",
+    "H110",
+    "H111",
+    "H125",
+    "J209",
+    "313"
+  ],
+  "val_words": 71,
+  "cer": {
+    "a_saved_crops": 0.1216,
+    "b_true_boxes": 0.1216,
+    "c_gap_rule_reordered": 0.4,
+    "d_gap_rule_as_is": 0.4405
+  },
+  "per_page_cer": {
+    "a_saved_crops": {
+      "A34": 0.179,
+      "A40": 0.194,
+      "H102": 0.0,
+      "H110": 0.077,
+      "H111": 0.082,
+      "H125": 0.167,
+      "J209": 0.06,
+      "313": 0.15
+    },
+    "b_true_boxes": {
+      "A34": 0.179,
+      "A40": 0.194,
+      "H102": 0.0,
+      "H110": 0.077,
+      "H111": 0.082,
+      "H125": 0.167,
+      "J209": 0.06,
+      "313": 0.15
+    },
+    "c_gap_rule_reordered": {
+      "A34": 0.286,
+      "A40": 0.361,
+      "H102": 0.192,
+      "H110": 0.346,
+      "H111": 0.571,
+      "H125": 0.286,
+      "J209": 0.3,
+      "313": 0.513
+    },
+    "d_gap_rule_as_is": {
+      "A34": 0.286,
+      "A40": 0.361,
+      "H102": 0.192,
+      "H110": 0.346,
+      "H111": 0.878,
+      "H125": 0.286,
+      "J209": 0.3,
+      "313": 0.513
+    }
+  },
+  "box_stats_val": {
+    "pages": 8,
+    "true_words": 71,
+    "found_boxes": 101,
+    "boxes_one_word": 25,
+    "boxes_part_of_a_word": 65,
+    "boxes_2plus_words_same_line": 10,
+    "boxes_mixing_two_lines": 1,
+    "found_lines": 16,
+    "found_lines_with_2plus_true_lines": 0,
+    "pairs_out_of_order": 15,
+    "pairs": 921,
+    "share_pairs_out_of_order": 0.0163
+  },
+  "box_stats_train_val": {
+    "pages": 97,
+    "true_words": 1175,
+    "found_boxes": 1426,
+    "boxes_one_word": 734,
+    "boxes_part_of_a_word": 565,
+    "boxes_2plus_words_same_line": 113,
+    "boxes_mixing_two_lines": 14,
+    "found_lines": 202,
+    "found_lines_with_2plus_true_lines": 4,
+    "pairs_out_of_order": 363,
+    "pairs": 23325,
+    "share_pairs_out_of_order": 0.0156
+  }
+}

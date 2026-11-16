@@ -1,0 +1,199 @@
+{
+  "test_accuracy": 0.8144,
+  "test_macro_f1": 0.8183,
+  "val_accuracy": 0.8147,
+  "best_epoch": 76,
+  "n_test": 873,
+  "n_test_sheets": 23,
+  "device": "mps",
+  "small_mode": false,
+  "top_confusions": [
+    {
+      "true": 14,
+      "true_letter": "ڃ",
+      "pred": 12,
+      "pred_letter": "ڄ",
+      "count": 6
+    },
+    {
+      "true": 7,
+      "true_letter": "ٽ",
+      "pred": 6,
+      "pred_letter": "ٿ",
+      "count": 4
+    },
+    {
+      "true": 12,
+      "true_letter": "ڄ",
+      "pred": 15,
+      "pred_letter": "چ",
+      "count": 4
+    },
+    {
+      "true": 23,
+      "true_letter": "ڍ",
+      "pred": 22,
+      "pred_letter": "ڊ",
+      "count": 4
+    },
+    {
+      "true": 11,
+      "true_letter": "ج",
+      "pred": 12,
+      "pred_letter": "ڄ",
+      "count": 3
+    },
+    {
+      "true": 11,
+      "true_letter": "ج",
+      "pred": 17,
+      "pred_letter": "ح",
+      "count": 3
+    },
+    {
+      "true": 14,
+      "true_letter": "ڃ",
+      "pred": 15,
+      "pred_letter": "چ",
+      "count": 3
+    },
+    {
+      "true": 21,
+      "true_letter": "ڏ",
+      "pred": 20,
+      "pred_letter": "ڌ",
+      "count": 3
+    },
+    {
+      "true": 25,
+      "true_letter": "ر",
+      "pred": 19,
+      "pred_letter": "د",
+      "count": 3
+    },
+    {
+      "true": 27,
+      "true_letter": "ز",
+      "pred": 26,
+      "pred_letter": "ڙ",
+      "count": 3
+    },
+    {
+      "true": 44,
+      "true_letter": "ڱ",
+      "pred": 41,
+      "pred_letter": "گ",
+      "count": 3
+    },
+    {
+      "true": 47,
+      "true_letter": "ن",
+      "pred": 5,
+      "pred_letter": "ت",
+      "count": 3
+    },
+    {
+      "true": 7,
+      "true_letter": "ٽ",
+      "pred": 9,
+      "pred_letter": "ث",
+      "count": 2
+    },
+    {
+      "true": 7,
+      "true_letter": "ٽ",
+      "pred": 5,
+      "pred_letter": "ت",
+      "count": 2
+    },
+    {
+      "true": 8,
+      "true_letter": "ٺ",
+      "pred": 9,
+      "pred_letter": "ث",
+      "count": 2
+    },
+    {
+      "true": 9,
+      "true_letter": "ث",
+      "pred": 7,
+      "pred_letter": "ٽ",
+      "count": 2
+    },
+    {
+      "true": 9,
+      "true_letter": "ث",
+      "pred": 8,
+      "pred_letter": "ٺ",
+      "count": 2
+    },
+    {
+      "true": 10,
+      "true_letter": "پ",
+      "pred": 3,
+      "pred_letter": "ٻ",
+      "count": 2
+    },
+    {
+      "true": 12,
+      "true_letter": "ڄ",
+      "pred": 14,
+      "pred_letter": "ڃ",
+      "count": 2
+    },
+    {
+      "true": 12,
+      "true_letter": "ڄ",
+      "pred": 11,
+      "pred_letter": "ج",
+      "count": 2
+    },
+    {
+      "true": 15,
+      "true_letter": "چ",
+      "pred": 14,
+      "pred_letter": "ڃ",
+      "count": 2
+    },
+    {
+      "true": 16,
+      "true_letter": "ڇ",
+      "pred": 12,
+      "pred_letter": "ڄ",
+      "count": 2
+    },
+    {
+      "true": 16,
+      "true_letter": "ڇ",
+      "pred": 14,
+      "pred_letter": "ڃ",
+      "count": 2
+    },
+    {
+      "true": 17,
+      "true_letter": "ح",
+      "pred": 11,
+      "pred_letter": "ج",
+      "count": 2
+    },
+    {
+      "true": 20,
+      "true_letter": "ڌ",
+      "pred": 21,
+      "pred_letter": "ڏ",
+      "count": 2
+    }
+  ],
+  "run": "gray_aux_synth",
+  "config": {
+    "aux_weight": 0.3,
+    "synthetic_p": 0.25,
+    "input": "gray",
+    "train_frac": 1.0
+  },
+  "aux_sizes": [
+    22,
+    5,
+    5
+  ]
+}

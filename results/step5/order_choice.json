@@ -1,0 +1,224 @@
+{
+  "pages": 97,
+  "chosen": {
+    "min_v": 0.6,
+    "max_x": 0.75
+  },
+  "results": {
+    "step3_4_mean_centre": {
+      "out_of_order": 346,
+      "pairs": 23325,
+      "share": 0.01483
+    },
+    "rows min_v=0.3 max_x=0.0": {
+      "min_v": 0.3,
+      "max_x": 0.0,
+      "out_of_order": 410,
+      "pairs": 23325,
+      "share": 0.01758
+    },
+    "rows min_v=0.3 max_x=0.25": {
+      "min_v": 0.3,
+      "max_x": 0.25,
+      "out_of_order": 340,
+      "pairs": 23325,
+      "share": 0.01458
+    },
+    "rows min_v=0.3 max_x=0.5": {
+      "min_v": 0.3,
+      "max_x": 0.5,
+      "out_of_order": 327,
+      "pairs": 23325,
+      "share": 0.01402
+    },
+    "rows min_v=0.3 max_x=0.75": {
+      "min_v": 0.3,
+      "max_x": 0.75,
+      "out_of_order": 249,
+      "pairs": 23325,
+      "share": 0.01068
+    },
+    "rows min_v=0.3 max_x=0.9": {
+      "min_v": 0.3,
+      "max_x": 0.9,
+      "out_of_order": 628,
+      "pairs": 23325,
+      "share": 0.02692
+    },
+    "rows min_v=0.3 max_x=1.0": {
+      "min_v": 0.3,
+      "max_x": 1.0,
+      "out_of_order": 1450,
+      "pairs": 23325,
+      "share": 0.06217
+    },
+    "rows min_v=0.4 max_x=0.0": {
+      "min_v": 0.4,
+      "max_x": 0.0,
+      "out_of_order": 410,
+      "pairs": 23325,
+      "share": 0.01758
+    },
+    "rows min_v=0.4 max_x=0.25": {
+      "min_v": 0.4,
+      "max_x": 0.25,
+      "out_of_order": 340,
+      "pairs": 23325,
+      "share": 0.01458
+    },
+    "rows min_v=0.4 max_x=0.5": {
+      "min_v": 0.4,
+      "max_x": 0.5,
+      "out_of_order": 327,
+      "pairs": 23325,
+      "share": 0.01402
+    },
+    "rows min_v=0.4 max_x=0.75": {
+      "min_v": 0.4,
+      "max_x": 0.75,
+      "out_of_order": 249,
+      "pairs": 23325,
+      "share": 0.01068
+    },
+    "rows min_v=0.4 max_x=0.9": {
+      "min_v": 0.4,
+      "max_x": 0.9,
+      "out_of_order": 628,
+      "pairs": 23325,
+      "share": 0.02692
+    },
+    "rows min_v=0.4 max_x=1.0": {
+      "min_v": 0.4,
+      "max_x": 1.0,
+      "out_of_order": 1287,
+      "pairs": 23325,
+      "share": 0.05518
+    },
+    "rows min_v=0.5 max_x=0.0": {
+      "min_v": 0.5,
+      "max_x": 0.0,
+      "out_of_order": 410,
+      "pairs": 23325,
+      "share": 0.01758
+    },
+    "rows min_v=0.5 max_x=0.25": {
+      "min_v": 0.5,
+      "max_x": 0.25,
+      "out_of_order": 340,
+      "pairs": 23325,
+      "share": 0.01458
+    },
+    "rows min_v=0.5 max_x=0.5": {
+      "min_v": 0.5,
+      "max_x": 0.5,
+      "out_of_order": 327,
+      "pairs": 23325,
+      "share": 0.01402
+    },
+    "rows min_v=0.5 max_x=0.75": {
+      "min_v": 0.5,
+      "max_x": 0.75,
+      "out_of_order": 249,
+      "pairs": 23325,
+      "share": 0.01068
+    },
+    "rows min_v=0.5 max_x=0.9": {
+      "min_v": 0.5,
+      "max_x": 0.9,
+      "out_of_order": 460,
+      "pairs": 23325,
+      "share": 0.01972
+    },
+    "rows min_v=0.5 max_x=1.0": {
+      "min_v": 0.5,
+      "max_x": 1.0,
+      "out_of_order": 912,
+      "pairs": 23325,
+      "share": 0.0391
+    },
+    "rows min_v=0.6 max_x=0.0": {
+      "min_v": 0.6,
+      "max_x": 0.0,
+      "out_of_order": 410,
+      "pairs": 23325,
+      "share": 0.01758
+    },
+    "rows min_v=0.6 max_x=0.25": {
+      "min_v": 0.6,
+      "max_x": 0.25,
+      "out_of_order": 340,
+      "pairs": 23325,
+      "share": 0.01458
+    },
+    "rows min_v=0.6 max_x=0.5": {
+      "min_v": 0.6,
+      "max_x": 0.5,
+      "out_of_order": 327,
+      "pairs": 23325,
+      "share": 0.01402
+    },
+    "rows min_v=0.6 max_x=0.75": {
+      "min_v": 0.6,
+      "max_x": 0.75,
+      "out_of_order": 249,
+      "pairs": 23325,
+      "share": 0.01068
+    },
+    "rows min_v=0.6 max_x=0.9": {
+      "min_v": 0.6,
+      "max_x": 0.9,
+      "out_of_order": 460,
+      "pairs": 23325,
+      "share": 0.01972
+    },
+    "rows min_v=0.6 max_x=1.0": {
+      "min_v": 0.6,
+      "max_x": 1.0,
+      "out_of_order": 782,
+      "pairs": 23325,
+      "share": 0.03353
+    },
+    "rows min_v=0.7 max_x=0.0": {
+      "min_v": 0.7,
+      "max_x": 0.0,
+      "out_of_order": 410,
+      "pairs": 23325,
+      "share": 0.01758
+    },
+    "rows min_v=0.7 max_x=0.25": {
+      "min_v": 0.7,
+      "max_x": 0.25,
+      "out_of_order": 340,
+      "pairs": 23325,
+      "share": 0.01458
+    },
+    "rows min_v=0.7 max_x=0.5": {
+      "min_v": 0.7,
+      "max_x": 0.5,
+      "out_of_order": 340,
+      "pairs": 23325,
+      "share": 0.01458
+    },
+    "rows min_v=0.7 max_x=0.75": {
+      "min_v": 0.7,
+      "max_x": 0.75,
+      "out_of_order": 262,
+      "pairs": 23325,
+      "share": 0.01123
+    },
+    "rows min_v=0.7 max_x=0.9": {
+      "min_v": 0.7,
+      "max_x": 0.9,
+      "out_of_order": 473,
+      "pairs": 23325,
+      "share": 0.02028
+    },
+    "rows min_v=0.7 max_x=1.0": {
+      "min_v": 0.7,
+      "max_x": 1.0,
+      "out_of_order": 801,
+      "pairs": 23325,
+      "share": 0.03434
+    }
+  }
+}
